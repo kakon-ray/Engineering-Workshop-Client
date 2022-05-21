@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import PageBanner from "../Component/PageBanner";
 import {
-  useCreateUserWithEmailAndPassword,
+  useSignInWithEmailAndPassword,
   useAuthState,
   useUpdateProfile,
   useSendEmailVerification,
@@ -12,12 +12,9 @@ import auth from "../firebase.init";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Registation = () => {
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  const [updateProfile, updating] = useUpdateProfile(auth);
-  const [sendEmailVerification, sending, emailVaryerror] =
-    useSendEmailVerification(auth);
+const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
   let navigate = useNavigate();
   let location = useLocation();
@@ -32,75 +29,33 @@ const Registation = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-    await sendEmailVerification();
+    await signInWithEmailAndPassword(data.email, data.password);
+
     console.log(data.name);
   };
 
-  if (user) {
-    Swal.fire({
-      position: "top-center",
-      icon: "success",
-      title: "Login Success",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+  useEffect(() => {
+    if (user) {
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Login Success",
+        showConfirmButton: false,
+        timer: 1500,
+      });
 
-    setTimeout(() => {
-      navigate(from, { replace: true });
-    }, 1000);
-  }
+      setTimeout(() => {
+        navigate(from, { replace: true });
+      }, 1000);
+    }
+  }, [user]);
 
   return (
     <>
-      <PageBanner page="Registaion"></PageBanner>
+      <PageBanner page="Login"></PageBanner>
       <div className="max-w-lg mx-auto py-24 ">
         <div className="shadow-lg p-10">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label class="label">
-              {!errors.name && (
-                <span className="label-text-alt">Enter Your Name</span>
-              )}
-
-              {errors.name?.type === "required" && (
-                <span className="label-text-alt text-primary">
-                  {errors.name.message}
-                </span>
-              )}
-              {errors.name?.type === "pattern" && (
-                <span className="label-text-alt primary">
-                  {errors.name.message}
-                </span>
-              )}
-            </label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              {...register("name", {
-                required: {
-                  value: true,
-                  message: "Name is Required",
-                },
-              })}
-              class="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        
-       border
-        transition
-        my-2
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-            />
-
             <label class="label">
               {!errors.email && (
                 <span className="label-text-alt">Enter Your Email</span>
@@ -228,4 +183,4 @@ const Registation = () => {
   );
 };
 
-export default Registation;
+export default Login;
