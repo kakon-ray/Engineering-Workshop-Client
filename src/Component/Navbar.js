@@ -74,8 +74,8 @@ const Navbar = () => {
             href="#"
           >
             <img
-              src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-              style={{ height: "15px" }}
+              src="https://themebing.com/wp/sayara/wp-content/uploads/2020/06/logo.png"
+              style={{ height: "25px" }}
               alt=""
               loading="lazy"
             />
@@ -87,7 +87,7 @@ const Navbar = () => {
                 class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                 href="#"
               >
-                Dashboard
+                Home
               </a>
             </li>
             <li class="nav-item p-2">
@@ -95,7 +95,7 @@ const Navbar = () => {
                 class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                 href="#"
               >
-                Team
+                Purchase
               </a>
             </li>
             <li class="nav-item p-2">

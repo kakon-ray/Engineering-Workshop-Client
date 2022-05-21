@@ -1,14 +1,22 @@
 import React from "react";
-import BestOffer from "../Component/BestOffer";
+
+import BusinessSummery from "../Component/BusinessSummery";
+import Catagory from "../Component/Catagory";
 import HomePageBanner from "../Component/HomePageBanner";
 import Products from "../Component/Products";
+
+import Review from "../Component/Review";
+import MetTheTem from "../Component/MetTheTem";
 
 const Home = () => {
   return (
     <div>
       <HomePageBanner></HomePageBanner>
       <Products></Products>
-      <BestOffer></BestOffer>
+      <BusinessSummery />
+      <Catagory></Catagory>
+      <MetTheTem></MetTheTem>
+      <Review />
     </div>
   );
 };

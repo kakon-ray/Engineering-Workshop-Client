@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     colors: {
       primary: "#e52727",
-      secondary: "#19D3AE",
+      secondary: "#ffb66d",
       accent: "#3A4256",
-      neutral: "#03B8D7",
+      hoverPrimary: "#c01111",
       "base-100": "#ffffff",
       transparent: "transparent",
       current: "currentColor",
