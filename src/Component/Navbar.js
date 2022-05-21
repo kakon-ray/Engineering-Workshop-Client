@@ -100,6 +100,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li class="nav-item p-2">
+              <Link
+                class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                to="/registation"
+              >
+                Registation
+              </Link>
+            </li>
+            <li class="nav-item p-2">
               <a
                 class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                 href="#"

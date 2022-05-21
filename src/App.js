@@ -5,6 +5,7 @@ import Home from "./Page/Home";
 import Footer from "./Component/Footer";
 import { Routes, Route, Link } from "react-router-dom";
 import PurchesPage from "./Page/PurchesPage";
+import Registation from "./Page/Registaion";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="purches" element={<PurchesPage />} />
+        <Route path="registation" element={<Registation />} />
       </Routes>
       <Footer></Footer>
     </div>
