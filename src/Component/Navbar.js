@@ -182,7 +182,7 @@ const Navbar = () => {
       text-left
       rounded-lg
       shadow-lg
-   
+     top-11
       m-0
       bg-clip-padding
       border-none
@@ -281,6 +281,7 @@ const Navbar = () => {
     z-50
     float-left
     py-2
+     top-11
     list-none
     text-left
     rounded-lg
