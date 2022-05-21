@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -83,20 +84,20 @@ const Navbar = () => {
 
           <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
             <li class="nav-item p-2">
-              <a
+              <Link
                 class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                href="#"
+                to="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li class="nav-item p-2">
-              <a
+              <Link
                 class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                href="#"
+                to="/purches"
               >
                 Purchase
-              </a>
+              </Link>
             </li>
             <li class="nav-item p-2">
               <a
