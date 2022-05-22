@@ -5,7 +5,7 @@ const Loading = () => {
     <div>
       <div className="flex justify-center items-center space-x-2 h-screen">
         <div
-          class="
+          className="
     spinner-border
     animate-spin
     inline-block
@@ -17,7 +17,7 @@ const Loading = () => {
   "
           role="status"
         >
-          <span class="visually-hidden">Loading...</span>
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     </div>

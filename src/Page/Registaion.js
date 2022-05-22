@@ -58,7 +58,7 @@ const Registation = () => {
       <div className="max-w-lg mx-auto py-24 ">
         <div className="shadow-lg p-10">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label class="label">
+            <label className="label">
               {!errors.name && (
                 <span className="label-text-alt">Enter Your Name</span>
               )}
@@ -84,7 +84,7 @@ const Registation = () => {
                   message: "Name is Required",
                 },
               })}
-              class="form-control block
+              className="form-control block
         w-full
         px-3
         py-1.5
@@ -101,7 +101,7 @@ const Registation = () => {
         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             />
 
-            <label class="label">
+            <label className="label">
               {!errors.email && (
                 <span className="label-text-alt">Enter Your Email</span>
               )}
@@ -130,7 +130,7 @@ const Registation = () => {
                   message: "Provide a valid Email",
                 },
               })}
-              class="form-control block
+              className="form-control block
         w-full
         px-3
         py-1.5
@@ -175,7 +175,7 @@ const Registation = () => {
                   message: "Must be 6 characters or longer",
                 },
               })}
-              class="form-control block
+              className="form-control block
         w-full
         px-3
         py-1.5
@@ -199,7 +199,7 @@ const Registation = () => {
               type="submit"
               data-mdb-ripple="true"
               data-mdb-ripple-color="danger"
-              class="
+              className="
       w-full
       px-6
       

@@ -4,18 +4,18 @@ import React from "react";
 const MeetTheTemCard = () => {
   return (
     <div>
-      <div class="mb-6 lg:mb-0">
-        <div class="bg-white block rounded-lg shadow-lg">
-          <div class="relative overflow-hidden bg-no-repeat bg-cover">
+      <div className="mb-6 lg:mb-0">
+        <div className="bg-white block rounded-lg shadow-lg">
+          <div className="relative overflow-hidden bg-no-repeat bg-cover">
             <img
               src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-              class="w-full rounded-t-lg"
+              className="w-full rounded-t-lg"
             />
             <a href="#!">
-              <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
+              <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
             </a>
             <svg
-              class="absolute"
+              className="absolute"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 320"
               style={{ left: "0", bottom: "0" }}
@@ -26,15 +26,15 @@ const MeetTheTemCard = () => {
               ></path>
             </svg>
           </div>
-          <div class="p-6">
-            <h5 class="text-lg font-bold mb-4">Maria Smith</h5>
-            <p class="text-gray-500 mb-4">Frontend Developer</p>
-            <ul class="list-inside flex mx-auto justify-center">
-              <a href="#!" class="px-2">
+          <div className="p-6">
+            <h5 className="text-lg font-bold mb-4">Maria Smith</h5>
+            <p className="text-gray-500 mb-4">Frontend Developer</p>
+            <ul className="list-inside flex mx-auto justify-center">
+              <a href="#!" className="px-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
-                  class="w-4 h-4 text-blue-600"
+                  className="w-4 h-4 text-blue-600"
                 >
                   <path
                     fill="currentColor"
@@ -42,11 +42,11 @@ const MeetTheTemCard = () => {
                   />
                 </svg>
               </a>
-              <a href="#!" class="px-2">
+              <a href="#!" className="px-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
-                  class="w-4 h-4 text-blue-600"
+                  className="w-4 h-4 text-blue-600"
                 >
                   <path
                     fill="currentColor"
@@ -54,11 +54,11 @@ const MeetTheTemCard = () => {
                   />
                 </svg>
               </a>
-              <a href="#!" class="px-2">
+              <a href="#!" className="px-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
-                  class="w-4 h-4 text-blue-600"
+                  className="w-4 h-4 text-blue-600"
                 >
                   <path
                     fill="currentColor"

@@ -3,35 +3,35 @@ import React from "react";
 const Review = () => {
   return (
     <div>
-      <section class="mb-32 text-gray-800 text-center">
-        <h2 class="text-4xl font-bold mb-12 text-secondary uppercase">
+      <section className="mb-32 text-gray-800 text-center">
+        <h2 className="text-4xl font-bold mb-12 text-secondary uppercase">
           Our Client Review
         </h2>
 
         <div
           id="carouselExampleCaptions"
-          class="carousel slide relative carousel-dark"
+          className="carousel slide relative carousel-dark"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner relative w-full overflow-hidden">
-            <div class="carousel-item active relative float-left w-full">
+          <div className="carousel-inner relative w-full overflow-hidden">
+            <div className="carousel-item active relative float-left w-full">
               <img
-                class="rounded-full shadow-lg mb-6 mx-auto"
+                className="rounded-full shadow-lg mb-6 mx-auto"
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
                 alt="avatar"
                 style={{ width: "150px" }}
               />
-              <div class="flex flex-wrap justify-center">
-                <div class="grow-0 shrink-0 basis-auto w-full lg:w-8/12 px-3">
-                  <h5 class="text-lg font-bold mb-3">Maria Kate</h5>
-                  <p class="font-medium text-gray-700 mb-4">Photographer</p>
-                  <p class="text-gray-500 mb-6">
+              <div className="flex flex-wrap justify-center">
+                <div className="grow-0 shrink-0 basis-auto w-full lg:w-8/12 px-3">
+                  <h5 className="text-lg font-bold mb-3">Maria Kate</h5>
+                  <p className="font-medium text-gray-700 mb-4">Photographer</p>
+                  <p className="text-gray-500 mb-6">
                     <svg
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fas"
                       data-icon="quote-left"
-                      class="w-6 pr-2 inline-block"
+                      className="w-6 pr-2 inline-block"
                       role="img"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"
@@ -48,14 +48,14 @@ const Review = () => {
                     est, nec posuere ex arcu sit amet erat. Sed a dictum sem.
                     Duis pretium condimentum nulla.
                   </p>
-                  <ul class="flex justify-center mb-0">
+                  <ul className="flex justify-center mb-0">
                     <li>
                       <svg
                         aria-hidden="true"
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -72,7 +72,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -89,7 +89,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -106,7 +106,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -123,7 +123,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="far"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -138,24 +138,26 @@ const Review = () => {
                 </div>
               </div>
             </div>
-            <div class="carousel-item relative float-left w-full">
+            <div className="carousel-item relative float-left w-full">
               <img
-                class="rounded-full shadow-lg mb-6 mx-auto"
+                className="rounded-full shadow-lg mb-6 mx-auto"
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
                 alt="avatar"
                 style={{ width: "150px" }}
               />
-              <div class="flex flex-wrap justify-center">
-                <div class="grow-0 shrink-0 basis-auto w-full lg:w-8/12 px-3">
-                  <h5 class="text-lg font-bold mb-3">John Doe</h5>
-                  <p class="font-medium text-gray-700 mb-4">Web Developer</p>
-                  <p class="text-gray-500 mb-6">
+              <div className="flex flex-wrap justify-center">
+                <div className="grow-0 shrink-0 basis-auto w-full lg:w-8/12 px-3">
+                  <h5 className="text-lg font-bold mb-3">John Doe</h5>
+                  <p className="font-medium text-gray-700 mb-4">
+                    Web Developer
+                  </p>
+                  <p className="text-gray-500 mb-6">
                     <svg
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fas"
                       data-icon="quote-left"
-                      class="w-6 pr-2 inline-block"
+                      className="w-6 pr-2 inline-block"
                       role="img"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"
@@ -170,14 +172,14 @@ const Review = () => {
                     Quisque vitae semper metus. Aliquam eu dui aliquam, faucibus
                     metus quis, elementum nunc.
                   </p>
-                  <ul class="flex justify-center mb-0">
+                  <ul className="flex justify-center mb-0">
                     <li>
                       <svg
                         aria-hidden="true"
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -194,7 +196,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -211,7 +213,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -228,7 +230,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -245,7 +247,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star-half-alt"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 536 512"
@@ -260,24 +262,24 @@ const Review = () => {
                 </div>
               </div>
             </div>
-            <div class="carousel-item relative float-left w-full">
+            <div className="carousel-item relative float-left w-full">
               <img
-                class="rounded-full shadow-lg mb-6 mx-auto"
+                className="rounded-full shadow-lg mb-6 mx-auto"
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
                 alt="avatar"
                 style={{ width: "150px" }}
               />
-              <div class="flex flex-wrap justify-center">
-                <div class="grow-0 shrink-0 basis-auto w-full lg:w-8/12 px-3">
-                  <h5 class="text-lg font-bold mb-3">Anna Deynah</h5>
-                  <p class="font-medium text-gray-700 mb-4">UX Designer</p>
-                  <p class="text-gray-500 mb-6">
+              <div className="flex flex-wrap justify-center">
+                <div className="grow-0 shrink-0 basis-auto w-full lg:w-8/12 px-3">
+                  <h5 className="text-lg font-bold mb-3">Anna Deynah</h5>
+                  <p className="font-medium text-gray-700 mb-4">UX Designer</p>
+                  <p className="text-gray-500 mb-6">
                     <svg
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fas"
                       data-icon="quote-left"
-                      class="w-6 pr-2 inline-block"
+                      className="w-6 pr-2 inline-block"
                       role="img"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"
@@ -292,14 +294,14 @@ const Review = () => {
                     justo at lorem laoreet ultricies. Nunc ligula felis,
                     sagittis eget nisi vitae.
                   </p>
-                  <ul class="flex justify-center mb-0">
+                  <ul className="flex justify-center mb-0">
                     <li>
                       <svg
                         aria-hidden="true"
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -316,7 +318,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -333,7 +335,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -350,7 +352,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -367,7 +369,7 @@ const Review = () => {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="star"
-                        class="w-4 text-yellow-500"
+                        className="w-4 text-yellow-500"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512"
@@ -384,28 +386,28 @@ const Review = () => {
             </div>
           </div>
           <button
-            class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+            className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
           >
             <span
-              class="carousel-control-prev-icon inline-block bg-no-repeat"
+              className="carousel-control-prev-icon inline-block bg-no-repeat"
               aria-hidden="true"
             ></span>
-            <span class="visually-hidden">Previous</span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+            className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next"
           >
             <span
-              class="carousel-control-next-icon inline-block bg-no-repeat"
+              className="carousel-control-next-icon inline-block bg-no-repeat"
               aria-hidden="true"
             ></span>
-            <span class="visually-hidden">Next</span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </section>

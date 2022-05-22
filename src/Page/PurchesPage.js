@@ -4,6 +4,7 @@ import PageBanner from "../Component/PageBanner";
 import auth from "../firebase.init";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const PurchesPage = () => {
   const [currentUser] = useAuthState(auth);
@@ -34,20 +35,40 @@ const PurchesPage = () => {
       address,
       message,
     };
+
+    fetch("http://localhost:5000/product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(purchesValue),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Purchese Completed",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
 
   return (
     <>
       <PageBanner page="Parches" />
       <div className="my-12">
-        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-lg mx-auto">
+        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-lg mx-auto">
           <form onSubmit={handleSubmit}>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="text"
                 value={currentUser.displayName}
                 disabled
-                class="form-control block
+                className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -64,12 +85,12 @@ const PurchesPage = () => {
                 id="exampleInput7"
               />
             </div>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="email"
                 value={currentUser.email}
                 disabled
-                class="form-control block
+                className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -86,12 +107,12 @@ const PurchesPage = () => {
                 id="exampleInput8"
               />
             </div>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="text"
                 disabled
                 value={product?.productName}
-                class="form-control block
+                className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -108,12 +129,12 @@ const PurchesPage = () => {
                 id="exampleInput7"
               />
             </div>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="text"
                 value={`$${product?.price}`}
                 disabled
-                class="form-control block
+                className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -130,11 +151,11 @@ const PurchesPage = () => {
                 id="exampleInput7"
               />
             </div>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="text"
                 name="address"
-                class="form-control block
+                className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -152,11 +173,11 @@ const PurchesPage = () => {
                 placeholder="Address"
               />
             </div>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="text"
                 name="phone"
-                class="form-control block
+                className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -175,10 +196,10 @@ const PurchesPage = () => {
               />
             </div>
 
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <textarea
                 name="message"
-                class="
+                className="
                       form-control
                       block
                       w-full
