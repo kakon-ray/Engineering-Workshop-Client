@@ -1,12 +1,27 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 import auth from "../firebase.init";
+import { useUpdateProfile } from "react-firebase-hooks/auth";
+
 const imageStoregeKey = "e944521e2747c552bc19a4c67af741d6";
 
 const MyProfiles = () => {
   const [currentUser] = useAuthState(auth);
+  const [updateProfile, updating, authError] = useUpdateProfile(auth);
+
+  const {
+    isLoading,
+    error,
+    data: userinfo,
+    refetch,
+  } = useQuery("product", () =>
+    fetch(`http://localhost:5000/user/${currentUser.email}`).then((res) =>
+      res.json()
+    )
+  );
 
   const {
     register,
@@ -16,7 +31,7 @@ const MyProfiles = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const name = currentUser.displayName;
+    const name = data.name;
     const email = currentUser.email;
     const image = data.image[0];
     const phone = data.phone;
@@ -24,7 +39,7 @@ const MyProfiles = () => {
 
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageStoregeKey}`;
+    const url = `https://api.imgbb.com/1/upload?key=${imageStoregeKey}`;
 
     fetch(url, {
       method: "POST",
@@ -43,17 +58,16 @@ const MyProfiles = () => {
             address,
           };
 
-          fetch("https://fast-taiga-21201.herokuapp.com/doctor", {
-            method: "POST",
+          fetch(`http://localhost:5000/user/${email}`, {
+            method: "PUT",
             headers: {
               "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
             body: JSON.stringify(user),
           })
             .then((res) => res.json())
-            .then((doctoradd) => {
-              if (doctoradd.insertedId) {
+            .then((userInformation) => {
+              if (userInformation.acknowledged) {
                 Swal.fire({
                   position: "top-center",
                   icon: "success",
@@ -72,10 +86,9 @@ const MyProfiles = () => {
                 });
               }
             });
+          updateProfile({ displayName: data.name, photoURL: img });
         }
       });
-
-    console.log({});
   };
 
   return (
@@ -84,8 +97,7 @@ const MyProfiles = () => {
         <div className="form-group mb-6">
           <input
             type="text"
-            value={currentUser.displayName}
-            disabled
+            name="name"
             className="form-control block
                     w-full
                     px-3
@@ -101,6 +113,8 @@ const MyProfiles = () => {
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             id="exampleInput7"
+            placeholder={currentUser.displayName}
+            {...register("name")}
           />
         </div>
         <div className="form-group mb-6">
@@ -145,7 +159,9 @@ const MyProfiles = () => {
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             id="exampleInput7"
-            placeholder="Address"
+            placeholder={`${
+              !userinfo?.address ? "Address" : userinfo?.address
+            } `}
           />
         </div>
         <div className="form-group mb-6">
@@ -168,7 +184,9 @@ const MyProfiles = () => {
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             id="exampleInput7"
-            placeholder="Phone Number"
+            placeholder={`${
+              !userinfo?.phone ? "Phone Number" : userinfo?.phone
+            } `}
           />
         </div>
         <div className="form-group mb-6">
