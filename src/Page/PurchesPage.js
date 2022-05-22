@@ -2,21 +2,51 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import PageBanner from "../Component/PageBanner";
 import auth from "../firebase.init";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { useParams } from "react-router-dom";
 
 const PurchesPage = () => {
   const [currentUser] = useAuthState(auth);
+  const { id } = useParams();
+
+  const {
+    isLoading,
+    error,
+    data: product,
+    refetch,
+  } = useQuery("product", () =>
+    fetch(`http://localhost:5000/product/${id}`).then((res) => res.json())
+  );
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const phone = event.target.phone.value;
+    const address = event.target.address.value;
+    const message = event.target.message.value;
+
+    const purchesValue = {
+      name: currentUser?.displayName,
+      email: currentUser?.email,
+      productName: product?.productName,
+      price: product?.price,
+      phone,
+      address,
+      message,
+    };
+  };
 
   return (
     <>
       <PageBanner page="Parches" />
       <div className="my-12">
-        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
-          <form>
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-lg mx-auto">
+          <form onSubmit={handleSubmit}>
             <div class="form-group mb-6">
               <input
                 type="text"
-                disabled
                 value={currentUser.displayName}
+                disabled
                 class="form-control block
                     w-full
                     px-3
@@ -32,7 +62,6 @@ const PurchesPage = () => {
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
                 id="exampleInput7"
-                placeholder="Name"
               />
             </div>
             <div class="form-group mb-6">
@@ -55,14 +84,13 @@ const PurchesPage = () => {
                         m-0
                         focus:text-gray-700 focus:bg-white  focus:outline-none"
                 id="exampleInput8"
-                placeholder="Email address"
               />
             </div>
             <div class="form-group mb-6">
               <input
                 type="text"
                 disabled
-                value="100"
+                value={product?.productName}
                 class="form-control block
                     w-full
                     px-3
@@ -78,12 +106,34 @@ const PurchesPage = () => {
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
                 id="exampleInput7"
-                placeholder="Name"
               />
             </div>
             <div class="form-group mb-6">
               <input
                 type="text"
+                value={`$${product?.price}`}
+                disabled
+                class="form-control block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding
+                    
+                     border
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
+                id="exampleInput7"
+              />
+            </div>
+            <div class="form-group mb-6">
+              <input
+                type="text"
+                name="address"
                 class="form-control block
                         w-full
                         px-3
@@ -105,6 +155,7 @@ const PurchesPage = () => {
             <div class="form-group mb-6">
               <input
                 type="text"
+                name="phone"
                 class="form-control block
                         w-full
                         px-3
@@ -126,6 +177,7 @@ const PurchesPage = () => {
 
             <div class="form-group mb-6">
               <textarea
+                name="message"
                 class="
                       form-control
                       block

@@ -15,14 +15,14 @@ const Product = ({ item }) => {
               {item.productName}
             </h5>
             <div class="text-gray-700 text-base mb-4">
-              {item.itemsName?.map((tools) => (
-                <p>{tools}</p>
+              {item.itemsName?.map((tools, index) => (
+                <p key={index}>{tools}</p>
               ))}
             </div>
             <p>Total Item: {item.quantiti}</p>
             <p className="mb-2">Price: ${item.price}</p>
 
-            <Link to="/home/:id">
+            <Link to={`purshes/${item._id}`}>
               <button
                 type="button"
                 data-mdb-ripple="true"

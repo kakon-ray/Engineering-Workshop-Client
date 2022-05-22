@@ -14,13 +14,11 @@ const Products = () => {
     )
   );
 
-  console.log(product);
-
   return (
     <div className="my-24">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {product?.map((item) => {
-          return <Product item={item}></Product>;
+          return <Product key={item._id} item={item}></Product>;
         })}
       </div>
     </div>
