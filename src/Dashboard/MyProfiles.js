@@ -1,7 +1,9 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import auth from "../firebase.init";
+const imageStoregeKey = "e944521e2747c552bc19a4c67af741d6";
 
 const MyProfiles = () => {
   const [currentUser] = useAuthState(auth);
@@ -9,18 +11,71 @@ const MyProfiles = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     const name = currentUser.displayName;
     const email = currentUser.email;
-    const photoURL = data.image[0];
+    const image = data.image[0];
     const phone = data.phone;
     const address = data.address;
 
-    console.log({ name, email, photoURL, phone, address });
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageStoregeKey}`;
+
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.success) {
+          const img = result.data.url;
+
+          const user = {
+            name,
+            email,
+            image: img,
+            phone,
+            address,
+          };
+
+          fetch("https://fast-taiga-21201.herokuapp.com/doctor", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(user),
+          })
+            .then((res) => res.json())
+            .then((doctoradd) => {
+              if (doctoradd.insertedId) {
+                Swal.fire({
+                  position: "top-center",
+                  icon: "success",
+                  title: "User Information Update Successfully",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                reset();
+              } else {
+                Swal.fire({
+                  position: "top-center",
+                  icon: "error",
+                  title: "Faild to Update User Information",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            });
+        }
+      });
+
+    console.log({});
   };
 
   return (
