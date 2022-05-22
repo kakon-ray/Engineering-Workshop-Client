@@ -6,7 +6,7 @@ import Profile from "./Profile";
 const Dashboard = () => {
   return (
     <div>
-      <div className="grid grid-cols-4 h-screen">
+      <div className="grid grid-cols-4 ">
         <div className="lg:col-span-1 col-span-4">
           <Profile />
         </div>

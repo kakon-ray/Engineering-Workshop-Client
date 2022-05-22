@@ -25,6 +25,19 @@ const PurchesPage = () => {
     const phone = event.target.phone.value;
     const address = event.target.address.value;
     const message = event.target.message.value;
+    const quantity = event.target.quantity.value;
+
+    if (quantity < 100 || quantity > product.quantity) {
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: `You do not get product less then 100 and more then ${product.quantity}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      return;
+    }
 
     const purchesValue = {
       name: currentUser?.displayName,
@@ -34,6 +47,8 @@ const PurchesPage = () => {
       phone,
       address,
       message,
+      img: product?.img,
+      quantity,
     };
 
     fetch("http://localhost:5000/product", {
@@ -193,6 +208,29 @@ const PurchesPage = () => {
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
                 id="exampleInput7"
                 placeholder="Phone Number"
+              />
+            </div>
+            <div className="form-group mb-6">
+              <input
+                type="number"
+                defaultValue="100"
+                name="quantity"
+                className="form-control block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        
+                       border
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
+                id="exampleInput7"
+                placeholder="quantity"
               />
             </div>
 

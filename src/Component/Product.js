@@ -19,7 +19,7 @@ const Product = ({ item }) => {
                 <p key={index}>{tools}</p>
               ))}
             </div>
-            <p>Total Item: {item.quantiti}</p>
+            <p>Total Item: {item.quantity}</p>
             <p className="mb-2">Price: ${item.price}</p>
 
             <Link to={`purshes/${item._id}`}>

@@ -5,10 +5,9 @@ import auth from "../firebase.init";
 const Profile = () => {
   const [currentUser] = useAuthState(auth);
 
-  console.log(currentUser);
   return (
     <div>
-      <div class="p-6 bg-accent text-white h-screen">
+      <div class="p-6 bg-accent text-white h-72 lg:h-screen flex flex-col">
         <div className="mx-auto">
           {currentUser.photoURL ? (
             <img
@@ -23,8 +22,10 @@ const Profile = () => {
             ></ion-icon>
           )}
         </div>
-        <h1 className="text-2xl font-bold">{currentUser.displayName}</h1>
-        <h1 className="text-lg font-bold">{currentUser.email}</h1>
+        <h1 className="text-2xl font-bold text-center">
+          {currentUser.displayName}
+        </h1>
+        <h1 className="text-lg font-bold text-center">{currentUser.email}</h1>
       </div>
     </div>
   );
