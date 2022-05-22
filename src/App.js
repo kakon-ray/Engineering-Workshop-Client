@@ -10,9 +10,9 @@ import Login from "./Page/Login";
 import RequireAuth from "./Component/RequireAuth";
 import Dashboard from "./Dashboard/Dashboard";
 import DashboardSidebar from "./Dashboard/DashboardSidebar";
-import MyItem from "./Dashboard/MyItem";
+import MyOrder from "./Dashboard/MyOrder";
 
-import DashboardReview from "./Dashboard/DashboardReview";
+import AddReview from "./Dashboard/AddReview";
 
 function App() {
   return (
@@ -43,13 +43,13 @@ function App() {
             index
             element={
               <RequireAuth>
-                <MyItem />
+                <MyOrder />
               </RequireAuth>
             }
           />
           <Route
             path="dashboardreview"
-            element={<DashboardReview></DashboardReview>}
+            element={<AddReview></AddReview>}
           ></Route>
         </Route>
         {/* dashboard route end */}

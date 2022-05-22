@@ -17,13 +17,13 @@ const Sidebar = () => {
             </Link>
             <Link to="/dashboard">
               <SidebarLink
-                title="My Item"
+                title="My Order"
                 icon={<ion-icon name="infinite-outline"></ion-icon>}
               />
             </Link>
             <Link to="/dashboard/dashboardreview">
               <SidebarLink
-                title="My Rivew"
+                title="Add Review"
                 icon={<ion-icon name="star-outline"></ion-icon>}
               />
             </Link>
