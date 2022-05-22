@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SidebarLink from "./Share/SidebarLink";
+import auth from "../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Sidebar = () => {
   return (
@@ -27,6 +29,18 @@ const Sidebar = () => {
                 icon={<ion-icon name="star-outline"></ion-icon>}
               />
             </Link>
+
+            <li class="relative" onClick={() => signOut(auth)}>
+              <a
+                class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+                href="#!"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="dark"
+              >
+                <ion-icon name="log-out-outline"></ion-icon>
+                <span className="ml-1">Logout</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

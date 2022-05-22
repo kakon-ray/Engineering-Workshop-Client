@@ -87,6 +87,7 @@ const MyProfiles = () => {
               }
             });
           updateProfile({ displayName: data.name, photoURL: img });
+          refetch();
         }
       });
   };
@@ -113,7 +114,9 @@ const MyProfiles = () => {
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             id="exampleInput7"
-            placeholder={currentUser.displayName}
+            placeholder={`${
+              !currentUser?.displayName ? "User Name" : currentUser?.displayName
+            } `}
             {...register("name")}
           />
         </div>
