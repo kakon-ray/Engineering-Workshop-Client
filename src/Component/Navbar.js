@@ -4,6 +4,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
+import Li from "./Share/Li";
+import userimg from "../images/user.png";
 
 const Navbar = () => {
   const [currentUser] = useAuthState(auth);
@@ -216,7 +218,7 @@ const Navbar = () => {
         "
                     href="#"
                   >
-                    Action
+                    Profile
                   </a>
                 </li>
                 <li>
@@ -271,7 +273,7 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 <img
-                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  src={currentUser.photoURL ? currentUser.photoURL : userimg}
                   className="rounded-full"
                   style={{ height: "25px", width: "25px" }}
                   alt=""
@@ -304,46 +306,9 @@ const Navbar = () => {
   "
                 aria-labelledby="dropdownMenuButton2"
               >
-                <li>
-                  <a
-                    className="
-        dropdown-item
-        text-sm
-        py-2
-        px-4
-        font-normal
-        block
-        w-full
-        whitespace-nowrap
-        bg-transparent
-        text-gray-700
-        hover:bg-gray-100
-      "
-                    href="#"
-                  >
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="
-        dropdown-item
-        text-sm
-        py-2
-        px-4
-        font-normal
-        block
-        w-full
-        whitespace-nowrap
-        bg-transparent
-        text-gray-700
-        hover:bg-gray-100
-      "
-                    href="#"
-                  >
-                    Another action
-                  </a>
-                </li>
+                <Li>Profile</Li>
+                <Li>My Order</Li>
+
                 <li onClick={() => signOut(auth)}>
                   <a
                     className="

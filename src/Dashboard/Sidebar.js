@@ -15,7 +15,7 @@ const Sidebar = () => {
                 icon={<ion-icon name="person-circle-outline"></ion-icon>}
               />
             </Link>
-            <Link to="/dashboard">
+            <Link to="/dashboard/myorder">
               <SidebarLink
                 title="My Order"
                 icon={<ion-icon name="infinite-outline"></ion-icon>}
