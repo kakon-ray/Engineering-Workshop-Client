@@ -10,7 +10,9 @@ import {
 
 import auth from "../firebase.init";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useToken from "../Hook/useToken";
+import SocialLogin from "../Dashboard/Share/SocialLogin";
 
 const Registation = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -21,6 +23,7 @@ const Registation = () => {
 
   let navigate = useNavigate();
   let location = useLocation();
+  const [token] = useToken(user);
   const emailRef = useRef("");
   let from = location.state?.from?.pathname || "/";
 
@@ -38,7 +41,7 @@ const Registation = () => {
     console.log(data.name);
   };
 
-  if (user) {
+  if (token) {
     Swal.fire({
       position: "top-center",
       icon: "success",
@@ -57,6 +60,7 @@ const Registation = () => {
       <PageBanner page="Registaion"></PageBanner>
       <div className="max-w-lg mx-auto py-24 ">
         <div className="shadow-lg p-10">
+          <SocialLogin />
           <form onSubmit={handleSubmit(onSubmit)}>
             <label className="label">
               {!errors.name && (
@@ -202,7 +206,7 @@ const Registation = () => {
               className="
       w-full
       px-6
-      
+      mt-2
       py-2.5
       bg-primary
       text-white
@@ -222,6 +226,12 @@ const Registation = () => {
               Submit
             </button>
           </form>
+          <Link to="/login">
+            <p className=" text-center pt-4 cursor-pointer">
+              Already have a account!{" "}
+              <span className="text-purpleColor font-bold"> Please Login</span>
+            </p>
+          </Link>
         </div>
       </div>
     </>

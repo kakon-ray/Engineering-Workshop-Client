@@ -10,13 +10,18 @@ const MyOrder = () => {
     data: products,
     refetch,
   } = useQuery("product", () =>
-    fetch(`http://localhost:5000/myorder`).then((res) => res.json())
+    fetch(`http://localhost:5000/myorder`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
 
   return (
     <div>
       <div className="container mx-auto px-4 md:px-20 py-12 h-screen overflow-y-scroll">
-        <h1 className="text-2xl text-purple-600 font-bold text-center uppercase mb-5">
+        <h1 className="text-2xl text-secondary font-bold text-center uppercase mb-5">
           My Orders
         </h1>
 

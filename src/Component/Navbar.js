@@ -303,7 +303,12 @@ const Navbar = () => {
                 <Li>Profile</Li>
                 <Li>My Order</Li>
 
-                <li onClick={() => signOut(auth)}>
+                <li
+                  onClick={() => {
+                    signOut(auth);
+                    localStorage.removeItem("accessToken");
+                  }}
+                >
                   <a
                     className="
         dropdown-item

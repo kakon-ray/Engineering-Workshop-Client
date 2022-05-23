@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
@@ -10,18 +10,14 @@ const imageStoregeKey = "e944521e2747c552bc19a4c67af741d6";
 
 const MyProfiles = () => {
   const [currentUser] = useAuthState(auth);
+  const [userInfor, setUserInf] = useState({});
   const [updateProfile, updating, authError] = useUpdateProfile(auth);
 
-  const {
-    isLoading,
-    error,
-    data: userinfo,
-    refetch,
-  } = useQuery("product", () =>
-    fetch(`http://localhost:5000/user/${currentUser.email}`).then((res) =>
-      res.json()
-    )
-  );
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${currentUser.email}`)
+      .then((res) => res.json())
+      .then((data) => setUserInf(data));
+  }, []);
 
   const {
     register,
@@ -67,7 +63,7 @@ const MyProfiles = () => {
           })
             .then((res) => res.json())
             .then((userInformation) => {
-              if (userInformation.acknowledged) {
+              if (userInformation.result.acknowledged) {
                 Swal.fire({
                   position: "top-center",
                   icon: "success",
@@ -87,7 +83,6 @@ const MyProfiles = () => {
               }
             });
           updateProfile({ displayName: data.name, photoURL: img });
-          refetch();
         }
       });
   };
@@ -163,7 +158,7 @@ const MyProfiles = () => {
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             id="exampleInput7"
             placeholder={`${
-              !userinfo?.address ? "Address" : userinfo?.address
+              !userInfor?.address ? "Address" : userInfor?.address
             } `}
           />
         </div>
@@ -188,7 +183,7 @@ const MyProfiles = () => {
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
             id="exampleInput7"
             placeholder={`${
-              !userinfo?.phone ? "Phone Number" : userinfo?.phone
+              !userInfor?.phone ? "Phone Number" : userInfor?.phone
             } `}
           />
         </div>

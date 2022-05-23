@@ -30,7 +30,13 @@ const Sidebar = () => {
               />
             </Link>
 
-            <li class="relative" onClick={() => signOut(auth)}>
+            <li
+              class="relative"
+              onClick={() => {
+                signOut(auth);
+                localStorage.removeItem("accessToken");
+              }}
+            >
               <a
                 class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
                 href="#!"
