@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 
 const Profile = () => {
   const [currentUser] = useAuthState(auth);
+  const [userInfor, setUserInf] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${currentUser.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setUserInf(data));
+  }, []);
 
   return (
     <div>
@@ -22,10 +34,17 @@ const Profile = () => {
             ></ion-icon>
           )}
         </div>
-        <h1 className="text-2xl font-bold text-center">
-          {currentUser.displayName}
-        </h1>
-        <h1 className="text-lg font-bold text-center">{currentUser.email}</h1>
+        <span className="border my-6">
+          <h1 className="text-2xl font-bold text-center">
+            {currentUser.displayName}
+          </h1>
+          <hr className="my-2" />
+          <h1 className="text-lg font-bold text-center">{userInfor.phone}</h1>
+          <hr className="my-2" />
+          <h1 className="text-lg font-bold text-center">{currentUser.email}</h1>
+          <hr className="my-2" />
+          <h1 className="text-lg font-bold text-center">{userInfor.address}</h1>
+        </span>
       </div>
     </div>
   );
