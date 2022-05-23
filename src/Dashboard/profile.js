@@ -19,7 +19,7 @@ const Profile = () => {
 
   return (
     <div>
-      <div class="p-6 bg-accent text-white h-72 lg:h-screen flex flex-col">
+      <div class="p-6 bg-accent text-white h-full lg:h-screen flex flex-col">
         <div className="mx-auto">
           {currentUser.photoURL ? (
             <img
@@ -43,7 +43,9 @@ const Profile = () => {
           <hr className="my-2" />
           <h1 className="text-lg font-bold text-center">{currentUser.email}</h1>
           <hr className="my-2" />
-          <h1 className="text-lg font-bold text-center">{userInfor.address}</h1>
+          <h1 className="text-lg font-bold text-center mb-2">
+            {userInfor.address}
+          </h1>
         </span>
       </div>
     </div>

@@ -16,6 +16,11 @@ import AddReview from "./Dashboard/AddReview";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import MyProfiles from "./Dashboard/MyProfiles";
+import AddProduct from "./Dashboard/AdminPage/AddProduct";
+import RequireAdmin from "./Dashboard/AdminPage/RequireAdmin";
+import MakeAdmin from "./Dashboard/AdminPage/MakeAdmin";
+import ManageAllOrders from "./Dashboard/AdminPage/ManageAllOrders";
+import ManageProduct from "./Dashboard/AdminPage/ManageProduct";
 
 function App() {
   const [currentUser] = useAuthState(auth);
@@ -61,7 +66,44 @@ function App() {
           />
           <Route
             path="dashboardreview"
-            element={<AddReview></AddReview>}
+            element={
+              <RequireAuth>
+                <AddReview></AddReview>
+              </RequireAuth>
+            }
+          ></Route>
+          {/* admin rout heare */}
+          <Route
+            path="addproduct"
+            element={
+              <RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="makeadmin"
+            element={
+              <RequireAdmin>
+                <MakeAdmin></MakeAdmin>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageAllOrder"
+            element={
+              <RequireAdmin>
+                <ManageAllOrders></ManageAllOrders>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageProduct"
+            element={
+              <RequireAdmin>
+                <ManageProduct></ManageProduct>
+              </RequireAdmin>
+            }
           ></Route>
         </Route>
         {/* dashboard route end */}

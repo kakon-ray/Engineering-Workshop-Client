@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import SidebarLink from "./Share/SidebarLink";
 import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
+import useAdmin from "../Hook/useAdmin";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Sidebar = () => {
+  const [user] = useAuthState(auth);
+  const [admin, adminLoading] = useAdmin(user);
   return (
     <div>
       <div className="lg:col-span-1 col-span-5">
@@ -29,6 +33,35 @@ const Sidebar = () => {
                 icon={<ion-icon name="star-outline"></ion-icon>}
               />
             </Link>
+
+            {admin && (
+              <>
+                <Link to="/dashboard/addproduct">
+                  <SidebarLink
+                    title="Add Product"
+                    icon={<ion-icon name="cloud-upload-outline"></ion-icon>}
+                  />
+                </Link>
+                <Link to="/dashboard/makeadmin">
+                  <SidebarLink
+                    title="Make Admin"
+                    icon={<ion-icon name="person-add-outline"></ion-icon>}
+                  />
+                </Link>
+                <Link to="/dashboard/manageAllOrder">
+                  <SidebarLink
+                    title="Manage All Order"
+                    icon={<ion-icon name="cut-outline"></ion-icon>}
+                  />
+                </Link>
+                <Link to="/dashboard/manageProduct">
+                  <SidebarLink
+                    title="Manage Product"
+                    icon={<ion-icon name="build-outline"></ion-icon>}
+                  />
+                </Link>
+              </>
+            )}
 
             <li
               class="relative"
