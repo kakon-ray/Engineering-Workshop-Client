@@ -14,7 +14,12 @@ const MyProfiles = () => {
   const [updateProfile, updating, authError] = useUpdateProfile(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${currentUser.email}`)
+    fetch(`http://localhost:5000/user/${currentUser.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => setUserInf(data));
   }, []);
