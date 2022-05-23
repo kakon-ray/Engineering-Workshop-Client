@@ -13,17 +13,6 @@ const MyProfiles = () => {
   const [userInfor, setUserInf] = useState({});
   const [updateProfile, updating, authError] = useUpdateProfile(auth);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/user/${currentUser.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setUserInf(data));
-  }, []);
-
   const {
     register,
     handleSubmit,
@@ -76,7 +65,6 @@ const MyProfiles = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                reset();
               } else {
                 Swal.fire({
                   position: "top-center",
@@ -90,7 +78,21 @@ const MyProfiles = () => {
           updateProfile({ displayName: data.name, photoURL: img });
         }
       });
+
+    reset();
   };
+
+  const url = `http://localhost:5000/user/${currentUser.email}`;
+  useEffect(() => {
+    fetch(url, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setUserInf(data));
+  }, [updating]);
 
   return (
     <div className="w-100 mx-32 mt-8 mx-auto p-10 shadow-md border">
@@ -238,7 +240,7 @@ const MyProfiles = () => {
                           duration-150
                           ease-in-out"
         >
-          Purches
+          Update Profile
         </button>
       </form>
     </div>

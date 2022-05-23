@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import ReactDOM from "react-dom";
+
 import StarRatingComponent from "react-star-rating-component";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
@@ -42,7 +42,7 @@ const AddReview = () => {
           Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "User Information Update Successfully",
+            title: "Thanks for you Review",
             showConfirmButton: false,
             timer: 1500,
           });
