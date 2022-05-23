@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import ReactDOM from "react-dom";
+import StarRatingComponent from "react-star-rating-component";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import Swal from "sweetalert2";
 
 const AddReview = () => {
+  const [rating, setRating] = useState(9);
+  const [currentUser] = useAuthState(auth);
   const {
     register,
     handleSubmit,
@@ -11,7 +18,41 @@ const AddReview = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const userProfessional = data.profession;
+    const description = data.description;
+    const name = currentUser.displayName;
+    const photoURL = currentUser.photoURL;
+
+    fetch(`http://localhost:5000/review`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        userProfessional,
+        description,
+        name,
+        photoURL,
+        rating,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "User Information Update Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          reset();
+        }
+      });
+  };
+
+  const onStarClick = (nextValue, prevValue, name) => {
+    setRating(nextValue);
   };
 
   return (
@@ -63,6 +104,19 @@ const AddReview = () => {
             id="exampleInput7"
             placeholder="Desription"
             {...register("description")}
+          />
+        </div>
+
+        <p className="text-lg text-center text-secondary">
+          If you are happy for our services please good Review our services
+        </p>
+        <div className="mx-auto text-center my-4">
+          <StarRatingComponent
+            name="rate1"
+            starCount={10}
+            value={rating}
+            className="text-3xl"
+            onStarClick={onStarClick}
           />
         </div>
 
