@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const Products = () => {
-  const {
-    isLoading,
-    error,
-    data: product,
-    refetch,
-  } = useQuery("product", () =>
-    fetch(`https://lit-thicket-98954.herokuapp.com/product`).then((res) =>
-      res.json()
-    )
-  );
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch("https://lit-thicket-98954.herokuapp.com/product")
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, []);
 
   return (
     <div className="my-24">
