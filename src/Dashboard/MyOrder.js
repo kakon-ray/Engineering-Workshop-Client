@@ -1,16 +1,19 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
-import PageBanner from "../Component/PageBanner";
+import auth from "../firebase.init";
 import Table from "./Share/Table";
 
 const MyOrder = () => {
+  const [currentUser] = useAuthState(auth);
+
   const {
     isLoading,
     error,
     data: products,
     refetch,
   } = useQuery("product", () =>
-    fetch(`http://localhost:5000/myorder`, {
+    fetch(`http://localhost:5000/myorder/${currentUser.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -11,7 +11,6 @@ const RequireAdmin = ({ children }) => {
   let location = useLocation();
   const [admin, adminLoading] = useAdmin(user);
 
-  console.log("admin loading", adminLoading);
   if (loading || adminLoading) {
     return <Loading />;
   }

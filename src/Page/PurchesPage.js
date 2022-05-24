@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import PageBanner from "../Component/PageBanner";
 import auth from "../firebase.init";
@@ -9,15 +9,21 @@ import Swal from "sweetalert2";
 const PurchesPage = () => {
   const [currentUser] = useAuthState(auth);
   const { id } = useParams();
+  const [product, setMyProduct] = useState({});
 
-  const {
-    isLoading,
-    error,
-    data: product,
-    refetch,
-  } = useQuery("product", () =>
-    fetch(`http://localhost:5000/product/${id}`).then((res) => res.json())
-  );
+  useEffect(() => {
+    fetch(`http://localhost:5000/product/${id}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setMyProduct(data));
+  }, []);
+
+  console.log(product);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -51,7 +57,7 @@ const PurchesPage = () => {
       quantity,
     };
 
-    fetch("http://localhost:5000/product", {
+    fetch("http://localhost:5000/purches", {
       method: "POST",
       headers: {
         "content-type": "application/json",

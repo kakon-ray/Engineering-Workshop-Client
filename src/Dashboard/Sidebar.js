@@ -27,12 +27,15 @@ const Sidebar = () => {
                 icon={<ion-icon name="infinite-outline"></ion-icon>}
               />
             </Link>
-            <Link to="/dashboard/dashboardreview">
-              <SidebarLink
-                title="Add Review"
-                icon={<ion-icon name="star-outline"></ion-icon>}
-              />
-            </Link>
+
+            {!admin && (
+              <Link to="/dashboard/dashboardreview">
+                <SidebarLink
+                  title="Add Review"
+                  icon={<ion-icon name="star-outline"></ion-icon>}
+                />
+              </Link>
+            )}
 
             {admin && (
               <>

@@ -11,10 +11,12 @@ const Products = () => {
       .then((data) => setProduct(data));
   }, []);
 
+  const homepageProduct = product.slice(-6).reverse();
+
   return (
     <div className="my-24">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-        {product?.map((item) => {
+        {homepageProduct?.map((item) => {
           return <Product key={item._id} item={item}></Product>;
         })}
       </div>
