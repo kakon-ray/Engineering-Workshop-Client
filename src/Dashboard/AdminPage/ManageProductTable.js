@@ -1,8 +1,8 @@
 import React from "react";
 import Swal from "sweetalert2";
 
-const ManageAllOrderTable = ({ allorder, refetch }) => {
-  const deleteOrder = (id) => {
+const ManageProductTable = ({ product, refetch }) => {
+  const deleteProduct = (id) => {
     Swal.fire({
       title: "<strong>Are you Sure Remove Order?</strong>",
       icon: "warning",
@@ -17,7 +17,7 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
         async function fetchFunction() {
           try {
             const response = await fetch(
-              `http://localhost:5000/allorder/${id}`,
+              `http://localhost:5000/product/${id}`,
               {
                 // mode: "no-cors",
                 method: "DELETE",
@@ -68,12 +68,12 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
             scope="col"
             className="text-x font-bold text-purple-900 uppercase px-6 py-4"
           >
-            Manage All Order
+            Manage Product
           </th>
         </tr>
       </thead>
       <tbody>
-        {allorder?.map((item) => {
+        {product?.map((item) => {
           return (
             <tr className="border-b" key={item._id}>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
@@ -95,11 +95,11 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
 
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                 <button
-                  onClick={() => deleteOrder(item._id)}
+                  onClick={() => deleteProduct(item._id)}
                   type="button"
                   className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                 >
-                  Delete Order
+                  Delete Product
                 </button>
               </td>
             </tr>
@@ -110,4 +110,4 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
   );
 };
 
-export default ManageAllOrderTable;
+export default ManageProductTable;
