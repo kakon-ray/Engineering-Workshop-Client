@@ -21,6 +21,7 @@ import RequireAdmin from "./Dashboard/AdminPage/RequireAdmin";
 import MakeAdmin from "./Dashboard/AdminPage/MakeAdmin";
 import ManageAllOrders from "./Dashboard/AdminPage/ManageAllOrders";
 import ManageProduct from "./Dashboard/AdminPage/ManageProduct";
+import Payment from "./Dashboard/Payment/Payment";
 
 function App() {
   const [currentUser] = useAuthState(auth);
@@ -103,6 +104,14 @@ function App() {
               <RequireAdmin>
                 <ManageProduct></ManageProduct>
               </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="payment/:id"
+            element={
+              <RequireAuth>
+                <Payment></Payment>
+              </RequireAuth>
             }
           ></Route>
         </Route>

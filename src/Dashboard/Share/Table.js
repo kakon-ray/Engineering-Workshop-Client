@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Table = ({ products, refetch }) => {
@@ -95,13 +96,27 @@ const Table = ({ products, refetch }) => {
               </td>
 
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                <button
-                  onClick={() => deleteItem(item._id)}
-                  type="button"
-                  className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                >
-                  Chancle Order
-                </button>
+                {!item.paid && (
+                  <button
+                    onClick={() => deleteItem(item._id)}
+                    type="button"
+                    className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                  >
+                    Chancle Order
+                  </button>
+                )}
+                {item.price && !item.paid ? (
+                  <Link to={`/dashboard/payment/${item._id}`}>
+                    <button
+                      type="button"
+                      className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    >
+                      Pay Now
+                    </button>
+                  </Link>
+                ) : (
+                  <p className="text-lg text-tahitiColor font-bold">Paid</p>
+                )}
               </td>
             </tr>
           );
