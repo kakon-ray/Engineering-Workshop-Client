@@ -13,9 +13,9 @@ module.exports = {
       white: "#ffffff",
       purpleColor: "#3f3cbb",
       midnight: "#121063",
-      metal: "#565584",
+      metalColor: "#f3f4f6",
       tahitiColor: "#3ab7bf",
-      silver: "#ecebff",
+      grayColor: "#e5e7eb",
 
       bermuda: "#78dcca",
     },
