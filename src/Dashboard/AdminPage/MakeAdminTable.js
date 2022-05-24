@@ -6,7 +6,7 @@ import useAdmin from "../../Hook/useAdmin";
 
 const MakeAdminTable = ({ user, refetch }) => {
   const makeAdmin = (email) => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://lit-thicket-98954.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

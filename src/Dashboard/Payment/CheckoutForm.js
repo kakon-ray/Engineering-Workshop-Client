@@ -16,7 +16,7 @@ const CheckoutForm = ({ data, refetch }) => {
 
   useEffect(() => {
     if (price) {
-      fetch("http://localhost:5000/create-payment-intent", {
+      fetch("https://lit-thicket-98954.herokuapp.com/create-payment-intent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -88,7 +88,7 @@ const CheckoutForm = ({ data, refetch }) => {
         transactionId: paymentIntent.id,
         appointment: _id,
       };
-      fetch(`http://localhost:5000/myorderPement/${_id}`, {
+      fetch(`https://lit-thicket-98954.herokuapp.com/myorderPement/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

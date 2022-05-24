@@ -12,7 +12,7 @@ const PurchesPage = () => {
   const [product, setMyProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://lit-thicket-98954.herokuapp.com/product/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -55,7 +55,7 @@ const PurchesPage = () => {
       quantity,
     };
 
-    fetch("http://localhost:5000/purches", {
+    fetch("https://lit-thicket-98954.herokuapp.com/purches", {
       method: "POST",
       headers: {
         "content-type": "application/json",

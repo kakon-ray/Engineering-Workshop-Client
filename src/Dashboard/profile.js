@@ -7,7 +7,7 @@ const Profile = () => {
   const [userInfor, setUserInf] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${currentUser.email}`, {
+    fetch(`https://lit-thicket-98954.herokuapp.com/user/${currentUser.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

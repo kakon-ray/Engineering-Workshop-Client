@@ -17,7 +17,7 @@ const ManageProductTable = ({ product, refetch }) => {
         async function fetchFunction() {
           try {
             const response = await fetch(
-              `http://localhost:5000/product/${id}`,
+              `https://lit-thicket-98954.herokuapp.com/product/${id}`,
               {
                 // mode: "no-cors",
                 method: "DELETE",

@@ -10,7 +10,7 @@ const Payment = () => {
   const { id } = useParams();
 
   const { isLoading, error, data, refetch } = useQuery("product", () =>
-    fetch(`http://localhost:5000/myorderDetails/${id}`, {
+    fetch(`https://lit-thicket-98954.herokuapp.com/myorderDetails/${id}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

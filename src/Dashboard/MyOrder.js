@@ -14,12 +14,15 @@ const MyOrder = () => {
     data: products,
     refetch,
   } = useQuery("product", () =>
-    fetch(`http://localhost:5000/myorder/${currentUser.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://lit-thicket-98954.herokuapp.com/myorder/${currentUser.email}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => res.json())
   );
 
   if (isLoading) {

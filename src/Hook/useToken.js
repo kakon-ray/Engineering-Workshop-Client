@@ -11,7 +11,7 @@ const useToken = (user) => {
     const addUser = async () => {
       if (email) {
         const response = await axios.put(
-          `http://localhost:5000/user/${email}`,
+          `https://lit-thicket-98954.herokuapp.com/user/${email}`,
           currentUser
         );
         const accessToken = response.data.token;

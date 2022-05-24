@@ -18,7 +18,7 @@ const Table = ({ products, refetch }) => {
         async function fetchFunction() {
           try {
             const response = await fetch(
-              `http://localhost:5000/myorder/${id}`,
+              `https://lit-thicket-98954.herokuapp.com/myorder/${id}`,
               {
                 // mode: "no-cors",
                 method: "DELETE",

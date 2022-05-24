@@ -23,7 +23,7 @@ const AddReview = () => {
     const name = currentUser.displayName;
     const photoURL = currentUser.photoURL;
 
-    fetch(`http://localhost:5000/review`, {
+    fetch(`https://lit-thicket-98954.herokuapp.com/review`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

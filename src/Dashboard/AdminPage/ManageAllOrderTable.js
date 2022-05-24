@@ -17,7 +17,7 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
         async function fetchFunction() {
           try {
             const response = await fetch(
-              `http://localhost:5000/allorder/${id}`,
+              `https://lit-thicket-98954.herokuapp.com/allorder/${id}`,
               {
                 // mode: "no-cors",
                 method: "DELETE",

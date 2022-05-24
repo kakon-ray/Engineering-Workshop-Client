@@ -48,7 +48,7 @@ const MyProfiles = () => {
             address,
           };
 
-          fetch(`http://localhost:5000/user/${email}`, {
+          fetch(`https://lit-thicket-98954.herokuapp.com/user/${email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -82,7 +82,7 @@ const MyProfiles = () => {
     reset();
   };
 
-  const url = `http://localhost:5000/user/${currentUser.email}`;
+  const url = `https://lit-thicket-98954.herokuapp.com/user/${currentUser.email}`;
   useEffect(() => {
     fetch(url, {
       method: "GET",

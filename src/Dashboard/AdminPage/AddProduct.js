@@ -33,7 +33,7 @@ const AddProduct = () => {
         if (result.success) {
           const img = result.data.url;
 
-          fetch(`http://localhost:5000/product`, {
+          fetch(`https://lit-thicket-98954.herokuapp.com/product`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

@@ -10,6 +10,7 @@ input:focus {
 ::-webkit-scrollbar {
   background-color: brown;
   width: 8px;
+  height: 8px;
 }
 
 /* Track */
@@ -24,7 +25,7 @@ input:focus {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(229, 5, 5);
+  background: #3ab7bf;
 }
 
 body {

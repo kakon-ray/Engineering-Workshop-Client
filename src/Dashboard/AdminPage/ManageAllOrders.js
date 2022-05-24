@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
     data: allorder,
     refetch,
   } = useQuery("product", () =>
-    fetch(`http://localhost:5000/allorder`, {
+    fetch(`https://lit-thicket-98954.herokuapp.com/allorder`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
