@@ -74,7 +74,7 @@ const Table = ({ products, refetch }) => {
         </tr>
       </thead>
       <tbody>
-        {products.length > 0 &&
+        {products?.length > 0 &&
           products.map((item) => {
             return (
               <tr className="border-b" key={item._id}>
