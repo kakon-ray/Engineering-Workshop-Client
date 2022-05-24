@@ -1,6 +1,40 @@
 import React from "react";
+import Swal from "sweetalert2";
 
-const ManageAllOrderTable = ({ allorder }) => {
+const ManageAllOrderTable = ({ allorder, refetch }) => {
+  const deleteOrder = (id) => {
+    Swal.fire({
+      title: "<strong>Are you Sure Remove Order?</strong>",
+      icon: "warning",
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: "Delete",
+      cancelButtonText: "No",
+      cancelButtonAriaLabel: "Thumbs down",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        async function fetchFunction() {
+          try {
+            const response = await fetch(
+              `http://localhost:5000/allorder/${id}`,
+              {
+                // mode: "no-cors",
+                method: "DELETE",
+              }
+            );
+            const json = await response.json();
+            refetch();
+            console.log(json);
+          } catch (err) {
+            throw err;
+            console.log(err);
+          }
+        }
+        fetchFunction();
+      }
+    });
+  };
   return (
     <table className="min-w-full border text-center ">
       <thead className="border-b">
@@ -61,6 +95,7 @@ const ManageAllOrderTable = ({ allorder }) => {
 
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                 <button
+                  onClick={() => deleteOrder(item._id)}
                   type="button"
                   className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                 >

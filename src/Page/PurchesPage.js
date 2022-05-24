@@ -82,14 +82,35 @@ const PurchesPage = () => {
     <>
       <PageBanner page="Parches" />
       <div className="my-12">
-        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-lg mx-auto">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group mb-6">
-              <input
-                type="text"
-                value={currentUser.displayName}
-                disabled
-                className="form-control block
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-4">
+          <div class="flex justify-center">
+            <div class="rounded-lg shadow-lg bg-white">
+              <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                <img src={product.img} alt="" />
+              </a>
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">
+                  {product.productName}
+                </h5>
+                <p class="text-gray-700  font-bold text-lg">
+                  Price One Item:
+                  {product.price}$
+                </p>
+                <p class="text-gray-700  mb-2 font-bold text-lg">
+                  Total Product : {product.quantity}
+                </p>
+                <p class="text-gray-700 text-base mb-4">{product.desc}</p>
+              </div>
+            </div>
+          </div>
+          <div className="block p-6 rounded-lg shadow-lg bg-white ">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  value={currentUser.displayName}
+                  disabled
+                  className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -103,15 +124,15 @@ const PurchesPage = () => {
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-                id="exampleInput7"
-              />
-            </div>
-            <div className="form-group mb-6">
-              <input
-                type="email"
-                value={currentUser.email}
-                disabled
-                className="form-control block
+                  id="exampleInput7"
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="email"
+                  value={currentUser.email}
+                  disabled
+                  className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -125,15 +146,15 @@ const PurchesPage = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:bg-white  focus:outline-none"
-                id="exampleInput8"
-              />
-            </div>
-            <div className="form-group mb-6">
-              <input
-                type="text"
-                disabled
-                value={product?.productName}
-                className="form-control block
+                  id="exampleInput8"
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  disabled
+                  value={product?.productName}
+                  className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -147,15 +168,15 @@ const PurchesPage = () => {
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-                id="exampleInput7"
-              />
-            </div>
-            <div className="form-group mb-6">
-              <input
-                type="text"
-                value={`$${product?.price}`}
-                disabled
-                className="form-control block
+                  id="exampleInput7"
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  value={`$${product?.price}`}
+                  disabled
+                  className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -169,14 +190,14 @@ const PurchesPage = () => {
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-                id="exampleInput7"
-              />
-            </div>
-            <div className="form-group mb-6">
-              <input
-                type="text"
-                name="address"
-                className="form-control block
+                  id="exampleInput7"
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  name="address"
+                  className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -190,15 +211,15 @@ const PurchesPage = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-                id="exampleInput7"
-                placeholder="Address"
-              />
-            </div>
-            <div className="form-group mb-6">
-              <input
-                type="text"
-                name="phone"
-                className="form-control block
+                  id="exampleInput7"
+                  placeholder="Address"
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  name="phone"
+                  className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -212,16 +233,16 @@ const PurchesPage = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-                id="exampleInput7"
-                placeholder="Phone Number"
-              />
-            </div>
-            <div className="form-group mb-6">
-              <input
-                type="number"
-                defaultValue="100"
-                name="quantity"
-                className="form-control block
+                  id="exampleInput7"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="number"
+                  defaultValue="100"
+                  name="quantity"
+                  className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -235,15 +256,15 @@ const PurchesPage = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-                id="exampleInput7"
-                placeholder="quantity"
-              />
-            </div>
+                  id="exampleInput7"
+                  placeholder="quantity"
+                />
+              </div>
 
-            <div className="form-group mb-6">
-              <textarea
-                name="message"
-                className="
+              <div className="form-group mb-6">
+                <textarea
+                  name="message"
+                  className="
                       form-control
                       block
                       w-full
@@ -260,17 +281,17 @@ const PurchesPage = () => {
                       m-0
                       focus:text-gray-700 focus:bg-white  focus:outline-none
                     "
-                id="exampleFormControlTextarea13"
-                rows="3"
-                placeholder="Message"
-              ></textarea>
-            </div>
+                  id="exampleFormControlTextarea13"
+                  rows="3"
+                  placeholder="Message"
+                ></textarea>
+              </div>
 
-            <button
-              type="submit"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="danger"
-              className="
+              <button
+                type="submit"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="danger"
+                className="
                           w-full
                           px-6
                           py-2.5
@@ -288,10 +309,11 @@ const PurchesPage = () => {
                           transition
                           duration-150
                           ease-in-out"
-            >
-              Purches
-            </button>
-          </form>
+              >
+                Purches
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </>
