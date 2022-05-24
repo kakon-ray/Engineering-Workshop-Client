@@ -6,7 +6,7 @@ import ReviewItem from "./Share/ReviewItem";
 const Review = () => {
   const [review, setReview] = useState([]);
 
-  const url = `http://localhost:5000/review`;
+  const url = `https://lit-thicket-98954.herokuapp.com/`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
