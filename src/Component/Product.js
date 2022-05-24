@@ -15,9 +15,7 @@ const Product = ({ item }) => {
               {item.productName}
             </h5>
             <div className="text-gray-700 text-base mb-4">
-              {item.itemsName?.map((tools, index) => (
-                <p key={index}>{tools}</p>
-              ))}
+              <p>{item.desc}</p>
             </div>
             <p>Total Item: {item.quantity}</p>
             <p className="mb-2">Price: ${item.price}</p>
