@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
+
 import ReviewItem from "./Share/ReviewItem";
 
 const Review = () => {

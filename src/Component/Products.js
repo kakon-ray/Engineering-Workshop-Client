@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const Products = () => {
   const [product, setProduct] = useState([]);

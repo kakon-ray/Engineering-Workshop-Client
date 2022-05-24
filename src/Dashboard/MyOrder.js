@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import Loading from "../Component/Loading";
 import auth from "../firebase.init";
 import Table from "./Share/Table";
 
@@ -20,6 +21,10 @@ const MyOrder = () => {
       },
     }).then((res) => res.json())
   );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>

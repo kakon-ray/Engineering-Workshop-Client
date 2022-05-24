@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import PageBanner from "../Component/PageBanner";
 import auth from "../firebase.init";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -22,8 +22,6 @@ const PurchesPage = () => {
       .then((res) => res.json())
       .then((data) => setMyProduct(data));
   }, []);
-
-  console.log(product);
 
   const handleSubmit = (event) => {
     event.preventDefault();

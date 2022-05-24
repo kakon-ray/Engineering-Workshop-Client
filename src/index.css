@@ -8,7 +8,23 @@ input:focus {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  background-color: brown;
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: brown;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(229, 5, 5);
 }
 
 body {

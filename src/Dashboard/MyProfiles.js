@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
+
 import Swal from "sweetalert2";
 import auth from "../firebase.init";
 import { useUpdateProfile } from "react-firebase-hooks/auth";

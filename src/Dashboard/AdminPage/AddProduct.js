@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React from "react";
+
 import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
-import auth from "../../firebase.init";
-import { useUpdateProfile } from "react-firebase-hooks/auth";
 
 const imageStoregeKey = "e944521e2747c552bc19a4c67af741d6";
 

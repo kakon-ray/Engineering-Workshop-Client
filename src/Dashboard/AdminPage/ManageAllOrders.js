@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import Loading from "../../Component/Loading";
 import ManageAllOrderTable from "./ManageAllOrderTable";
 
 const ManageAllOrders = () => {
@@ -17,6 +18,10 @@ const ManageAllOrders = () => {
       },
     }).then((res) => res.json())
   );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>

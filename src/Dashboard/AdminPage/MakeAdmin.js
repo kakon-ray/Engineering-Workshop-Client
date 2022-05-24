@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import Loading from "../../Component/Loading";
 import MakeAdminTable from "./MakeAdminTable";
 
 const MakeAdmin = () => {
@@ -16,6 +17,10 @@ const MakeAdmin = () => {
       },
     }).then((res) => res.json())
   );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>

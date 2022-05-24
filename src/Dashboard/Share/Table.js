@@ -74,53 +74,59 @@ const Table = ({ products, refetch }) => {
         </tr>
       </thead>
       <tbody>
-        {products?.map((item) => {
-          return (
-            <tr className="border-b" key={item._id}>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
-                <img
-                  src={item.img}
-                  alt=""
-                  style={{ width: "40px", height: "50px" }}
-                />
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-slate-200 border-r">
-                {item.productName}
-              </td>
+        {products.length > 0 &&
+          products.map((item) => {
+            return (
+              <tr className="border-b" key={item._id}>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
+                  <img
+                    src={item.img}
+                    alt=""
+                    style={{ width: "40px", height: "50px" }}
+                  />
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-slate-200 border-r">
+                  {item.productName}
+                </td>
 
-              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap dark:text-slate-200 border-r">
-                {item.quantity}
-              </td>
-              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap dark:text-slate-200 border-r">
-                {item.price}
-              </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap dark:text-slate-200 border-r">
+                  {item.quantity}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap dark:text-slate-200 border-r">
+                  {item.price}
+                </td>
 
-              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                {!item.paid && (
-                  <button
-                    onClick={() => deleteItem(item._id)}
-                    type="button"
-                    className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                  >
-                    Chancle Order
-                  </button>
-                )}
-                {item.price && !item.paid ? (
-                  <Link to={`/dashboard/payment/${item._id}`}>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                  {!item.paid && (
                     <button
+                      onClick={() => deleteItem(item._id)}
                       type="button"
                       className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     >
-                      Pay Now
+                      Chancle Order
                     </button>
-                  </Link>
-                ) : (
-                  <p className="text-lg text-tahitiColor font-bold">Paid</p>
-                )}
-              </td>
-            </tr>
-          );
-        })}
+                  )}
+                  {item.price && !item.paid ? (
+                    <Link to={`/dashboard/payment/${item._id}`}>
+                      <button
+                        type="button"
+                        className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                      >
+                        Pay Now
+                      </button>
+                    </Link>
+                  ) : (
+                    <>
+                      <p className="text-lg text-tahitiColor font-bold">Paid</p>
+                      <p className="text-sm text-tahitiColor font-bold">
+                        {item.transactionId}
+                      </p>
+                    </>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
       </tbody>
     </table>
   );

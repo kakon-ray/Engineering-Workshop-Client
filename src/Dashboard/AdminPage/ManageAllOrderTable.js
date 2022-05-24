@@ -63,6 +63,12 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
           >
             Quantity
           </th>
+          <th
+            scope="col"
+            className="text-x font-bold text-purple-900 uppercase px-6 py-4 border-r"
+          >
+            Pement
+          </th>
 
           <th
             scope="col"
@@ -91,6 +97,13 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-slate-200 border-r">
                 {item.quantity}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-slate-200 border-r">
+                {item.paid ? (
+                  <p className="text-lg font-bold text-tahitiColor">Paid</p>
+                ) : (
+                  <p className="text-lg font-bold">Do not Paid</p>
+                )}
               </td>
 
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
