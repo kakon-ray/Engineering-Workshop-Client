@@ -10,6 +10,8 @@ const PurchesPage = () => {
   const [currentUser] = useAuthState(auth);
   const { id } = useParams();
   const [product, setMyProduct] = useState({});
+  const [desibleButton, setDesibleButton] = useState(false);
+  const [inputQuantity, setQuantity] = useState(0);
 
   useEffect(() => {
     fetch(`https://lit-thicket-98954.herokuapp.com/product/${id}`, {
@@ -22,6 +24,12 @@ const PurchesPage = () => {
       .then((res) => res.json())
       .then((data) => setMyProduct(data));
   }, []);
+
+  useEffect(() => {
+    if (inputQuantity > 100 && inputQuantity < product.quantity) {
+      setDesibleButton(false);
+    }
+  }, [inputQuantity]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,7 +47,7 @@ const PurchesPage = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-
+      setDesibleButton(true);
       return;
     }
 
@@ -240,6 +248,7 @@ const PurchesPage = () => {
                   type="number"
                   defaultValue="100"
                   name="quantity"
+                  onChange={(e) => setQuantity(e.target.value)}
                   className="form-control block
                         w-full
                         px-3
@@ -287,9 +296,10 @@ const PurchesPage = () => {
 
               <button
                 type="submit"
+                disabled={desibleButton && "disabled"}
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="danger"
-                className="
+                className={`
                           w-full
                           px-6
                           py-2.5
@@ -306,7 +316,9 @@ const PurchesPage = () => {
                           active:bg-blue-800 active:shadow-lg
                           transition
                           duration-150
-                          ease-in-out"
+                          ease-in-out
+                          ${desibleButton ? "bg-grayColor" : "bg-primary"}
+                          `}
               >
                 Purches
               </button>
