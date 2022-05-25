@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import MeetTheTemCard from "./MeetTheTemCard";
+import Slide from "react-reveal/Slide";
 
 const MetTheTem = () => {
   return (
@@ -10,9 +11,15 @@ const MetTheTem = () => {
       </h2>
 
       <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
-        <MeetTheTemCard />
-        <MeetTheTemCard />
-        <MeetTheTemCard />
+        <Slide left>
+          <MeetTheTemCard />
+        </Slide>
+        <Slide bottom>
+          <MeetTheTemCard />
+        </Slide>
+        <Slide right>
+          <MeetTheTemCard />
+        </Slide>
       </div>
     </section>
   );

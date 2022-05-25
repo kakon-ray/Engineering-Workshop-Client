@@ -22,24 +22,22 @@ const HomePageBanner = () => {
                 The best offer on the market <br />
                 <span>for your business</span>
               </h1>
-              <a
+              <p
                 className="inline-block px-7 py-3 mr-1.5 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-accent hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
-                href="#!"
                 role="button"
               >
                 Get started
-              </a>
-              <a
+              </p>
+              <p
                 className="inline-block px-7 py-3 border-2 border-transparent bg-transparent text-white font-medium text-sm leading-snug uppercase rounded-full focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
-                href="#!"
                 role="button"
               >
                 Learn more
-              </a>
+              </p>
             </div>
           </div>
         </div>
