@@ -125,7 +125,7 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
               </td>
 
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                {item.paid && (
+                {item.paid && item.status != "Shift" && (
                   <button
                     onClick={() => shiftOrder(item._id)}
                     type="button"
