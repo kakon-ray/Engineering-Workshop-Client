@@ -7,7 +7,7 @@ import auth from "../firebase.init";
 import Swal from "sweetalert2";
 
 const AddReview = () => {
-  const [rating, setRating] = useState(9);
+  const [rating, setRating] = useState(5);
   const [currentUser] = useAuthState(auth);
   const {
     register,
@@ -113,7 +113,7 @@ const AddReview = () => {
         <div className="mx-auto text-center my-4">
           <StarRatingComponent
             name="rate1"
-            starCount={10}
+            starCount={5}
             value={rating}
             className="text-3xl"
             onStarClick={onStarClick}

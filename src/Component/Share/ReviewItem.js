@@ -38,7 +38,7 @@ const ReviewItem = ({ reviewItem }) => {
         <div className="mx-auto text-center my-4">
           <StarRatingComponent
             name="rate1"
-            starCount={10}
+            starCount={5}
             value={reviewItem.rating}
             className="text-3xl"
           />
