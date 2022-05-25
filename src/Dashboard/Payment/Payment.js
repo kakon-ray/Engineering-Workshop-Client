@@ -9,7 +9,7 @@ import Loading from "../../Component/Loading";
 const Payment = () => {
   const { id } = useParams();
 
-  const { isLoading, error, data, refetch } = useQuery("product", () =>
+  const { isLoading, error, data, refetch } = useQuery("data", () =>
     fetch(`https://lit-thicket-98954.herokuapp.com/myorderDetails/${id}`, {
       method: "GET",
       headers: {

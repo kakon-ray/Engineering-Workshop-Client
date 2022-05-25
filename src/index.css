@@ -25,7 +25,7 @@ input:focus {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #3ab7bf;
+  background: rgb(194, 12, 12);
 }
 
 body {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Swal from "sweetalert2";
 
 const ManageAllOrderTable = ({ allorder, refetch }) => {
@@ -35,6 +35,7 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
       }
     });
   };
+
   return (
     <table className="min-w-full border text-center ">
       <thead className="border-b">
