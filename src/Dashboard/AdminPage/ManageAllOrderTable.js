@@ -36,6 +36,21 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
     });
   };
 
+  const shiftOrder = (id) => {
+    fetch(`https://lit-thicket-98954.herokuapp.com/updateStatus/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
+      });
+  };
+
   return (
     <table className="min-w-full border text-center ">
       <thead className="border-b">
@@ -101,13 +116,24 @@ const ManageAllOrderTable = ({ allorder, refetch }) => {
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-slate-200 border-r">
                 {item.paid ? (
-                  <p className="text-lg font-bold text-tahitiColor">Paid</p>
+                  <p className="text-lg font-bold text-tahitiColor">
+                    {item.status}
+                  </p>
                 ) : (
-                  <p className="text-lg font-bold">Do not Paid</p>
+                  <p className="text-lg font-bold">Unpaid</p>
                 )}
               </td>
 
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                {item.paid && (
+                  <button
+                    onClick={() => shiftOrder(item._id)}
+                    type="button"
+                    className="inline-block hover:bg-primary hover:text-white border border-primary font-bold text-center  mr-2 px-6 py-2 font-medium text-xs leading-tight  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                  >
+                    Shift
+                  </button>
+                )}
                 <button
                   onClick={() => deleteOrder(item._id)}
                   type="button"

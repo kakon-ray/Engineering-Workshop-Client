@@ -117,7 +117,9 @@ const Table = ({ products, refetch }) => {
                     </Link>
                   ) : (
                     <>
-                      <p className="text-lg text-tahitiColor font-bold">Paid</p>
+                      <p className="text-lg text-tahitiColor font-bold">
+                        {item.status}
+                      </p>
                       <p className="text-sm text-tahitiColor font-bold">
                         {item.transactionId}
                       </p>

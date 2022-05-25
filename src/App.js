@@ -23,6 +23,8 @@ import ManageAllOrders from "./Dashboard/AdminPage/ManageAllOrders";
 import ManageProduct from "./Dashboard/AdminPage/ManageProduct";
 import Payment from "./Dashboard/Payment/Payment";
 import Error from "./Page/Error";
+import Blog from "./Page/Blog";
+import Portfolio from "./Page/Portfolio";
 
 function App() {
   const [currentUser] = useAuthState(auth);
@@ -119,6 +121,8 @@ function App() {
         {/* dashboard route end */}
         <Route path="registation" element={<Registation />} />
         <Route path="login" element={<Login />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="portfolio" element={<Portfolio />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer></Footer>

@@ -21,20 +21,22 @@ const Sidebar = () => {
                 icon={<ion-icon name="person-circle-outline"></ion-icon>}
               />
             </Link>
-            <Link to="/dashboard/myorder">
-              <SidebarLink
-                title="My Order"
-                icon={<ion-icon name="infinite-outline"></ion-icon>}
-              />
-            </Link>
 
             {!admin && (
-              <Link to="/dashboard/dashboardreview">
-                <SidebarLink
-                  title="Add Review"
-                  icon={<ion-icon name="star-outline"></ion-icon>}
-                />
-              </Link>
+              <>
+                <Link to="/dashboard/myorder">
+                  <SidebarLink
+                    title="My Order"
+                    icon={<ion-icon name="infinite-outline"></ion-icon>}
+                  />
+                </Link>
+                <Link to="/dashboard/dashboardreview">
+                  <SidebarLink
+                    title="Add Review"
+                    icon={<ion-icon name="star-outline"></ion-icon>}
+                  />
+                </Link>
+              </>
             )}
 
             {admin && (

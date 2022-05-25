@@ -99,6 +99,22 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
+            <li className="nav-item p-2">
+              <Link
+                className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                to="/blog"
+              >
+                Blog
+              </Link>
+            </li>
+            <li className="nav-item p-2">
+              <Link
+                className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                to="/portfolio"
+              >
+                Portfolio
+              </Link>
+            </li>
 
             {currentUser && (
               <li className="nav-item p-2">
