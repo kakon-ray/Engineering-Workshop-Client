@@ -1,16 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 
-const MeetTheTemCard = () => {
+const MeetTheTemCard = ({ name, img }) => {
   return (
     <div>
       <div className="mb-6 lg:mb-0">
         <div className="bg-white block rounded-lg shadow-lg">
           <div className="relative overflow-hidden bg-no-repeat bg-cover">
-            <img
-              src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-              className="w-full rounded-t-lg"
-            />
+            <img src={img} className="w-full rounded-t-lg" />
             <a href="#!">
               <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
             </a>
@@ -27,7 +24,7 @@ const MeetTheTemCard = () => {
             </svg>
           </div>
           <div className="p-6">
-            <h5 className="text-lg font-bold mb-4">Maria Smith</h5>
+            <h5 className="text-lg font-bold mb-4">{name}</h5>
             <p className="text-gray-500 mb-4">Frontend Developer</p>
             <ul className="list-inside flex mx-auto justify-center">
               <a href="#!" className="px-2">
