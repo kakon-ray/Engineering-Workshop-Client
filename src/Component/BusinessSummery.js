@@ -4,7 +4,7 @@ import Slide from "react-reveal/Slide";
 const BusinessSummery = () => {
   return (
     <div>
-      <section className="mb-32 text-gray-800 text-center md:text-left ">
+      <section className="mb-32 text-gray-800 text-center md:text-left mx-4">
         <div className="block rounded-lg bg-white">
           <div className="flex flex-wrap items-center">
             <Slide left>
