@@ -2,20 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 
-const Profile = () => {
+const Profile = ({ refetch, userInfor }) => {
   const [currentUser] = useAuthState(auth);
-  const [userInfor, setUserInf] = useState({});
-
-  useEffect(() => {
-    fetch(`https://lit-thicket-98954.herokuapp.com/user/${currentUser.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setUserInf(data));
-  }, []);
 
   return (
     <div>
@@ -34,16 +22,17 @@ const Profile = () => {
             ></ion-icon>
           )}
         </div>
-        <span className="border my-6">
-          <h1 className="text-2xl font-bold text-center">
+        <span className=" my-6">
+          <h1 className="text-2xl font-bold text-center py-1">
             {currentUser.displayName}
           </h1>
-          <hr className="my-2" />
-          <h1 className="text-lg font-bold text-center">{userInfor.phone}</h1>
-          <hr className="my-2" />
-          <h1 className="text-lg font-bold text-center">{currentUser.email}</h1>
-          <hr className="my-2" />
-          <h1 className="text-lg font-bold text-center mb-2">
+          <h1 className="text-lg font-bold text-center py-1">
+            {userInfor.phone}
+          </h1>
+          <h1 className="text-lg font-bold text-center py-1">
+            {currentUser.email}
+          </h1>
+          <h1 className="text-lg font-bold text-center mb-2 py-1">
             {userInfor.address}
           </h1>
         </span>

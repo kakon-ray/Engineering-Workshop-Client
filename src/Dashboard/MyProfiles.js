@@ -5,12 +5,15 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import auth from "../firebase.init";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
+import Profile from "./Profile";
+import { useQuery } from "react-query";
+import Loading from "../Component/Loading";
 
 const imageStoregeKey = "e944521e2747c552bc19a4c67af741d6";
 
 const MyProfiles = () => {
   const [currentUser] = useAuthState(auth);
-  const [userInfor, setUserInf] = useState({});
+
   const [updateProfile, updating, authError] = useUpdateProfile(auth);
 
   const {
@@ -20,6 +23,25 @@ const MyProfiles = () => {
     watch,
     formState: { errors },
   } = useForm();
+
+  const {
+    isLoading,
+    error,
+    data: userInfor,
+    refetch,
+  } = useQuery("userInfor", () =>
+    fetch(`https://lit-thicket-98954.herokuapp.com/user/${currentUser.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
   const onSubmit = (data) => {
     const name = data.name;
     const email = currentUser.email;
@@ -76,32 +98,32 @@ const MyProfiles = () => {
               }
             });
           updateProfile({ displayName: data.name, photoURL: img });
+        } else {
+          Swal.fire({
+            position: "top-center",
+            icon: "error",
+            title:
+              "Faild to Update User Information Please fulfillment all input filed",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
 
     reset();
+    refetch();
   };
 
-  const url = `https://lit-thicket-98954.herokuapp.com/user/${currentUser.email}`;
-  useEffect(() => {
-    fetch(url, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setUserInf(data));
-  }, [updating]);
-
   return (
-    <div className="w-100 mx-32 mt-8 mx-auto p-10 shadow-md border">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group mb-6">
-          <input
-            type="text"
-            name="name"
-            className="form-control block
+    <div className="grid grid-cols-1 lg:grid-cols-2">
+      <Profile refetch={refetch} userInfor={userInfor} />
+      <div className="w-100 mt-8 mx-auto p-10 shadow-md border">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group mb-6">
+            <input
+              type="text"
+              name="name"
+              className="form-control block
                     w-full
                     px-3
                     py-1.5
@@ -115,19 +137,21 @@ const MyProfiles = () => {
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-            id="exampleInput7"
-            placeholder={`${
-              !currentUser?.displayName ? "User Name" : currentUser?.displayName
-            } `}
-            {...register("name")}
-          />
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="email"
-            value={currentUser.email}
-            disabled
-            className="form-control block
+              id="exampleInput7"
+              placeholder={`${
+                !currentUser?.displayName
+                  ? "User Name"
+                  : currentUser?.displayName
+              } `}
+              {...register("name")}
+            />
+          </div>
+          <div className="form-group mb-6">
+            <input
+              type="email"
+              value={currentUser.email}
+              disabled
+              className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -141,15 +165,15 @@ const MyProfiles = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:bg-white  focus:outline-none"
-            id="exampleInput8"
-          />
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="text"
-            {...register("address")}
-            name="address"
-            className="form-control block
+              id="exampleInput8"
+            />
+          </div>
+          <div className="form-group mb-6">
+            <input
+              type="text"
+              {...register("address")}
+              name="address"
+              className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -163,18 +187,18 @@ const MyProfiles = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-            id="exampleInput7"
-            placeholder={`${
-              !userInfor?.address ? "Address" : userInfor?.address
-            } `}
-          />
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="text"
-            {...register("phone")}
-            name="phone"
-            className="form-control block
+              id="exampleInput7"
+              placeholder={`${
+                !userInfor?.address ? "Address" : userInfor?.address
+              } `}
+            />
+          </div>
+          <div className="form-group mb-6">
+            <input
+              type="text"
+              {...register("phone")}
+              name="phone"
+              className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -188,17 +212,17 @@ const MyProfiles = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-            id="exampleInput7"
-            placeholder={`${
-              !userInfor?.phone ? "Phone Number" : userInfor?.phone
-            } `}
-          />
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="file"
-            name="file"
-            className="form-control block
+              id="exampleInput7"
+              placeholder={`${
+                !userInfor?.phone ? "Phone Number" : userInfor?.phone
+              } `}
+            />
+          </div>
+          <div className="form-group mb-6">
+            <input
+              type="file"
+              name="file"
+              className="form-control block
                         w-full
                         px-3
                         py-1.5
@@ -212,16 +236,16 @@ const MyProfiles = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:border-primary focus:bg-white  focus:outline-0"
-            id="exampleInput7"
-            placeholder="Phone Number"
-            {...register("image")}
-          />
-        </div>
-        <button
-          type="submit"
-          data-mdb-ripple="true"
-          data-mdb-ripple-color="danger"
-          className="
+              id="exampleInput7"
+              placeholder="Phone Number"
+              {...register("image")}
+            />
+          </div>
+          <button
+            type="submit"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="danger"
+            className="
                           w-full
                           px-6
                           py-2.5
@@ -239,10 +263,11 @@ const MyProfiles = () => {
                           transition
                           duration-150
                           ease-in-out"
-        >
-          Update Profile
-        </button>
-      </form>
+          >
+            Update Profile
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -73,7 +73,7 @@ const Portfolio = () => {
               data-mdb-ripple-color="light"
             >
               <img src={hospital} class="w-full" />
-              <a href="#!">
+              <a href="https://hospital-kakon-ray.netlify.app/" target="_blank">
                 <div
                   class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
                   style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
@@ -110,7 +110,7 @@ const Portfolio = () => {
               data-mdb-ripple-color="light"
             >
               <img src={logika} class="w-full" />
-              <a href="#!">
+              <a href="https://logika-warehouse.web.app/" target="_blank">
                 <div
                   class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
                   style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
@@ -148,7 +148,10 @@ const Portfolio = () => {
               data-mdb-ripple-color="light"
             >
               <img src={Engineering} class="w-full" />
-              <a href="#!">
+              <a
+                href="https://engineering-workshop-a0bd0.web.app/"
+                target="_blank"
+              >
                 <div
                   class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
                   style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}

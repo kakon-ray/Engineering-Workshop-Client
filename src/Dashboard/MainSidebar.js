@@ -6,13 +6,13 @@ import { signOut } from "firebase/auth";
 import useAdmin from "../Hook/useAdmin";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const Sidebar = () => {
+const MainSidebar = () => {
   const [user] = useAuthState(auth);
   const [admin, adminLoading] = useAdmin(user);
   return (
     <div>
       <div className="lg:col-span-1 col-span-5">
-        <div class="w-100 h-screen shadow-md bg-white px-1">
+        <div class="w-100 h-screen hidden lg:block shadow-md bg-white px-1">
           <h1 className="text-3xl text-secondary p-6">Dashboard</h1>
           <ul class="relative">
             <Link to="/dashboard">
@@ -90,4 +90,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default MainSidebar;

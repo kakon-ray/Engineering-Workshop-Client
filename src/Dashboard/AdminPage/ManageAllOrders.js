@@ -25,7 +25,7 @@ const ManageAllOrders = () => {
 
   return (
     <div>
-      <div className="container mx-auto px-4 md:px-20 py-12 h-screen overflow-y-scroll">
+      <div className="container mx-auto px-4  py-12 h-screen overflow-y-scroll">
         <h1 className="text-2xl text-secondary font-bold text-center uppercase mb-5">
           Manage All Order
         </h1>
