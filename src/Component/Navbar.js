@@ -316,7 +316,9 @@ const Navbar = () => {
   "
                 aria-labelledby="dropdownMenuButton2"
               >
-                <Li>Profile</Li>
+                <Link to="dashboard">
+                  <Li>Profile</Li>
+                </Link>
                 <Li>My Order</Li>
 
                 <li
