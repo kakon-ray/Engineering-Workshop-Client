@@ -333,6 +333,7 @@ const Navbar = () => {
         px-4
         font-normal
         block
+        cursor-pointer
         w-full
         whitespace-nowrap
         bg-transparent
