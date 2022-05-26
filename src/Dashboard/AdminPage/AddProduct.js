@@ -59,7 +59,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="w-100 mx-32 mt-8 mx-auto p-10 shadow-md shadow-lg">
+    <div className="w-100 mx-4 lg:mx-32 mt-8 mx-auto p-10 shadow-md shadow-lg">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group mb-6">
           <input
