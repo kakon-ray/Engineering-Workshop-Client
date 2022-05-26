@@ -58,6 +58,9 @@ const Login = () => {
       <PageBanner page="Login"></PageBanner>
       <div className="max-w-lg mx-auto py-24 ">
         <div className="shadow-lg p-10">
+          {error && (
+            <p className="pb-8 text-primary text-center">{`Login Faild For issue ${error.message}`}</p>
+          )}
           <SocialLogin />
           <form onSubmit={handleSubmit(onSubmit)}>
             <label className="label">

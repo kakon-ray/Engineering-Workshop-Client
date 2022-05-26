@@ -38,7 +38,6 @@ const Registation = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     await sendEmailVerification();
-    console.log(data.name);
   };
 
   if (token) {
@@ -60,6 +59,9 @@ const Registation = () => {
       <PageBanner page="Registaion"></PageBanner>
       <div className="max-w-lg mx-auto py-24 ">
         <div className="shadow-lg p-10">
+          {error && (
+            <p className="pb-8 text-primary text-center">{`Registation faild ${error.message}`}</p>
+          )}
           <SocialLogin />
           <form onSubmit={handleSubmit(onSubmit)}>
             <label className="label">

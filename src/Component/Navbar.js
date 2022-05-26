@@ -325,7 +325,7 @@ const Navbar = () => {
                     localStorage.removeItem("accessToken");
                   }}
                 >
-                  <a
+                  <p
                     className="
         dropdown-item
         text-sm
@@ -339,10 +339,9 @@ const Navbar = () => {
         text-gray-700
         hover:bg-gray-100
       "
-                    href="#"
                   >
                     Logout
-                  </a>
+                  </p>
                 </li>
               </ul>
             </div>
