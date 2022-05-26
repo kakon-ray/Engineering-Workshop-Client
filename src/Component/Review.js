@@ -13,7 +13,7 @@ const Review = () => {
       .then((review) => setReview(review));
   }, []);
 
-  const updateReviewIitem = review.slice(-6).reverse();
+  const updateReviewIitem = review.slice(-3).reverse();
 
   return (
     <div>
@@ -22,7 +22,7 @@ const Review = () => {
 
         <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
           {updateReviewIitem?.map((reviewItem) => {
-            return <ReviewItem reviewItem={reviewItem} key={reviewItem._id}/>;
+            return <ReviewItem reviewItem={reviewItem} key={reviewItem._id} />;
           })}
         </div>
       </section>
