@@ -7,7 +7,7 @@ const Profile = ({ refetch, userInfor }) => {
 
   return (
     <div>
-      <div class="p-6 bg-accent text-white h-full lg:h-screen flex flex-col">
+      <div className="p-6 bg-accent text-white h-full lg:h-screen flex flex-col">
         <div className="mx-auto">
           {currentUser.photoURL ? (
             <img

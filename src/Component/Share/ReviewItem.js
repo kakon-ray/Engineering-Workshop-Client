@@ -6,25 +6,25 @@ const ReviewItem = ({ reviewItem }) => {
   return (
     <div>
       <Slide bottom>
-        <div class="mb-12 md:mb-0">
-          <div class="flex justify-center mb-6">
+        <div className="mb-12 md:mb-0">
+          <div className="flex justify-center mb-6">
             <img
               src={reviewItem.photoURL}
-              class="rounded-full shadow-lg"
+              className="rounded-full shadow-lg"
               style={{ height: "100px", width: "100px" }}
             />
           </div>
-          <h5 class="text-lg font-bold mb-4">{reviewItem.name}</h5>
-          <h6 class="font-medium text-blue-600 mb-4">
+          <h5 className="text-lg font-bold mb-4">{reviewItem.name}</h5>
+          <h6 className="font-medium text-blue-600 mb-4">
             {reviewItem.userProfessional}
           </h6>
-          <p class="mb-4">
+          <p className="mb-4">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="quote-left"
-              class="w-6 pr-2 inline-block"
+              className="w-6 pr-2 inline-block"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"

@@ -17,12 +17,12 @@ const Review = () => {
 
   return (
     <div>
-      <section class="mb-32 text-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-12">Our Client Review</h2>
+      <section className="mb-32 text-gray-800 text-center">
+        <h2 className="text-3xl font-bold mb-12">Our Client Review</h2>
 
-        <div class="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
+        <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
           {updateReviewIitem?.map((reviewItem) => {
-            return <ReviewItem reviewItem={reviewItem} />;
+            return <ReviewItem reviewItem={reviewItem} key={reviewItem._id}/>;
           })}
         </div>
       </section>

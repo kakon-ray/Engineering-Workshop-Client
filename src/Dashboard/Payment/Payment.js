@@ -30,25 +30,25 @@ const Payment = () => {
   return (
     <div>
       <div className="grid gird-cols-2 md:grid-cols-2 mx-36 gap-2 mt-6">
-        <div class="flex justify-center">
-          <div class="block rounded-lg shadow-lg bg-white max-w-sm text-start">
-            <div class="py-3 px-6 border-b border-gray-300">
+        <div className="flex justify-center">
+          <div className="block rounded-lg shadow-lg bg-white max-w-sm text-start">
+            <div className="py-3 px-6 border-b border-gray-300">
               Payment for Personal Information
             </div>
-            <div class="p-6">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">
+            <div className="p-6">
+              <h5 className="text-gray-900 text-xl font-medium mb-2">
                 {data?.name}
               </h5>
 
-              <p class="text-gray-700 text-base">Price:{data?.price} $</p>
-              <p class="text-gray-700 text-base">Phone:{data?.phone}</p>
-              <p class="text-gray-700 text-base">Email: {data?.email}</p>
-              <p class="text-gray-700 text-base">Address: {data?.address}</p>
+              <p className="text-gray-700 text-base">Price:{data?.price} $</p>
+              <p className="text-gray-700 text-base">Phone:{data?.phone}</p>
+              <p className="text-gray-700 text-base">Email: {data?.email}</p>
+              <p className="text-gray-700 text-base">Address: {data?.address}</p>
             </div>
           </div>
         </div>
-        <div class="flex justify-center">
-          <div class="block rounded-lg shadow-lg bg-white w-80 text-center">
+        <div className="flex justify-center">
+          <div className="block rounded-lg shadow-lg bg-white w-80 text-center">
             <Elements stripe={stripePromise}>
               <CheckoutForm data={data} refetch={refetch} />
             </Elements>

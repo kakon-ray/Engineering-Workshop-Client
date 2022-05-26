@@ -89,23 +89,23 @@ const PurchesPage = () => {
       <PageBanner page="Parches" />
       <div className="my-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-4">
-          <div class="flex justify-center">
-            <div class="rounded-lg shadow-lg bg-white">
+          <div className="flex justify-center">
+            <div className="rounded-lg shadow-lg bg-white">
               <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                 <img src={product.img} alt="" />
               </a>
-              <div class="p-6">
-                <h5 class="text-gray-900 text-xl font-medium mb-2">
+              <div className="p-6">
+                <h5 className="text-gray-900 text-xl font-medium mb-2">
                   {product.productName}
                 </h5>
-                <p class="text-gray-700  font-bold text-lg">
+                <p className="text-gray-700  font-bold text-lg">
                   Price One Item:
                   {product.price}$
                 </p>
-                <p class="text-gray-700  mb-2 font-bold text-lg">
+                <p className="text-gray-700  mb-2 font-bold text-lg">
                   Total Product : {product.quantity}
                 </p>
-                <p class="text-gray-700 text-base mb-4">{product.desc}</p>
+                <p className="text-gray-700 text-base mb-4">{product.desc}</p>
               </div>
             </div>
           </div>

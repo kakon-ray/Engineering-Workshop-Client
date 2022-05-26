@@ -31,18 +31,18 @@ const SocialLogin = () => {
 
   return (
     <div>
-      <div class="flex flex-row items-center justify-center lg:justify-center">
+      <div className="flex flex-row items-center justify-center lg:justify-center">
         <button
           type="button"
           onClick={() => signInWithGoogle()}
           data-mdb-ripple="true"
           data-mdb-ripple-color="light"
-          class="inline-block p-3 bg-purpleColor text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+          className="inline-block p-3 bg-purpleColor text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 488 512"
-            class="w-4 h-4"
+            className="w-4 h-4"
             style={{ color: "white" }}
           >
             <path
@@ -56,12 +56,12 @@ const SocialLogin = () => {
           type="button"
           data-mdb-ripple="true"
           data-mdb-ripple-color="light"
-          class="inline-block p-3 bg-accent text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+          className="inline-block p-3 bg-accent text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
-            class="w-4 h-4"
+            className="w-4 h-4"
           >
             <path
               fill="currentColor"
@@ -74,12 +74,12 @@ const SocialLogin = () => {
           type="button"
           data-mdb-ripple="true"
           data-mdb-ripple-color="light"
-          class="inline-block p-3 bg-purpleColor text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+          className="inline-block p-3 bg-purpleColor text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            class="w-4 h-4"
+            className="w-4 h-4"
           >
             <path
               fill="currentColor"
@@ -89,8 +89,8 @@ const SocialLogin = () => {
         </button>
       </div>
 
-      <div class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-        <p class="text-center font-semibold mx-4 mb-0">Or</p>
+      <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+        <p className="text-center font-semibold mx-4 mb-0">Or</p>
       </div>
     </div>
   );

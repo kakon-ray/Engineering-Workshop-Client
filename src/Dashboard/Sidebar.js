@@ -12,9 +12,9 @@ const Sidebar = () => {
   return (
     <div>
       <div className="lg:col-span-1 col-span-5">
-        <div class="w-100 h-screen shadow-md bg-white px-1">
+        <div className="w-100 h-screen shadow-md bg-white px-1">
           <h1 className="text-3xl text-secondary p-6">Dashboard</h1>
-          <ul class="relative">
+          <ul className="relative">
             <Link to="/dashboard">
               <SidebarLink
                 title="Profile"
@@ -67,14 +67,14 @@ const Sidebar = () => {
             )}
 
             <li
-              class="relative"
+              className="relative"
               onClick={() => {
                 signOut(auth);
                 localStorage.removeItem("accessToken");
               }}
             >
               <a
-                class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+                className="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
                 href="#!"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="dark"
