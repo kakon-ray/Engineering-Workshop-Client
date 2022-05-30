@@ -7,7 +7,7 @@ const BusinessSummery = () => {
       <section className="mb-32 text-gray-800 text-center md:text-left mx-4">
         <div className="block rounded-lg bg-white">
           <div className="flex flex-wrap items-center">
-            <Slide left>
+            <Slide bottom>
               <div className="grow-0 shrink-0 basis-auto block lg:flex w-full lg:w-6/12 xl:w-4/12 p-6">
                 <img
                   src="https://themebing.com/wp/sayara/wp-content/uploads/2020/05/banner-2.jpg"
@@ -18,7 +18,7 @@ const BusinessSummery = () => {
             </Slide>
             <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
               <ol className="border-l-2 border-blue-600">
-                <Slide right>
+                <Slide bottom>
                   <li>
                     <div className="flex flex-start items-center">
                       <div className="bg-primary w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
@@ -49,7 +49,7 @@ const BusinessSummery = () => {
                     </div>
                   </li>
                 </Slide>
-                <Slide right>
+                <Slide bottom>
                   <li>
                     <div className="flex flex-start items-center">
                       <div className="bg-primary w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
@@ -82,7 +82,7 @@ const BusinessSummery = () => {
                     </div>
                   </li>
                 </Slide>
-                <Slide right>
+                <Slide bottom>
                   <li>
                     <div className="flex flex-start items-center">
                       <div className="bg-primary w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>

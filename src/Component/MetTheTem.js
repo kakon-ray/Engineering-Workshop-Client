@@ -11,25 +11,25 @@ const MetTheTem = () => {
       </h2>
 
       <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-x-4 lg:gap-x-4">
-        <Slide left>
+        <Slide bottom>
           <MeetTheTemCard
             name="Ayak Black"
             img="https://mdbootstrap.com/img/new/avatars/6.jpg"
           />
         </Slide>
-        <Slide left>
+        <Slide bottom>
           <MeetTheTemCard
             name="Derren Smit"
             img="https://mdbootstrap.com/img/new/avatars/8.jpg"
           />
         </Slide>
-        <Slide right>
+        <Slide bottom>
           <MeetTheTemCard
             name="Roj Yena"
             img="https://mdbootstrap.com/img/new/avatars/15.jpg"
           />
         </Slide>
-        <Slide right>
+        <Slide bottom>
           <MeetTheTemCard
             name="Anik Smit"
             img="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"

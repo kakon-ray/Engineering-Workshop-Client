@@ -25,12 +25,6 @@ const Blog = () => {
                   any React performance problems. start by reviewing how the
                   React UI updates.
                 </p>
-                <button
-                  type="button"
-                  className=" inline-block px-6 py-2.5 bg-accent text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Button
-                </button>
               </div>
             </div>
           </div>
@@ -55,12 +49,6 @@ const Blog = () => {
                   State management can be done within Context Api. State
                   management can be done through React Query.
                 </p>
-                <button
-                  type="button"
-                  className=" inline-block px-6 py-2.5 bg-accent text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Button
-                </button>
               </div>
             </div>
           </div>
@@ -89,88 +77,6 @@ const Blog = () => {
                   object in JavaScript has an internal property called Prototype
                   .
                 </p>
-                <button
-                  type="button"
-                  className=" inline-block px-6 py-2.5 bg-accent text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Button
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center my-5">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
-              <a href="#!">
-                <img
-                  className="rounded-t-lg"
-                  src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                  alt=""
-                />
-              </a>
-              <div className="p-6">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">
-                  Why you do not set products = [...] instead,
-                </h5>
-                <p className="text-gray-700 text-base mb-4">
-                  [products, setProducts] = useState ([]) Here the value given
-                  in useState will be considered as initial value. For this
-                  useState ([]) we set the impetus array because when we load
-                  the data we will load it as array. And if we set products =
-                  [...] then it will be fixed and there will be various problems
-                  while changing our status.
-                </p>
-                <button
-                  type="button"
-                  className=" inline-block px-6 py-2.5 bg-accent text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Button
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center my-5">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
-              <a href="#!">
-                <img
-                  className="rounded-t-lg"
-                  src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                  alt=""
-                />
-              </a>
-              <div className="p-6">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">
-                  Search Implementation
-                </h5>
-                <p className="text-gray-700 text-base mb-4">
-                  First we will run a loop in an array then we will convert each
-                  element into product.name lowercase letters then we will
-                  include that array inside the element and see if it is -1 or
-                  we will copy the ones that are not in another array. And this
-                  is search result.
-                </p>
-                <p>
-                  {`
-                        let JsBook = [
-                            "Learn With Sumit",
-                            "Hate Kolome Javascript",
-                            "Programming Hero",
-                          ];
-
-                          for (let item of JsBook) {
-                            let lowercase = item.toLocaleLowerCase();
-                            if (lowercase.includes("programming")) {
-                              console.log("Yes Include programming");
-                            }
-                          }
-                      `}
-                </p>
-                <button
-                  type="button"
-                  className=" inline-block px-6 py-2.5 bg-accent text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Button
-                </button>
               </div>
             </div>
           </div>
