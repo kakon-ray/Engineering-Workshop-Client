@@ -356,14 +356,14 @@ const Navbar = () => {
               onClick={() => navigation("/login")}
               className="inline-block px-6 py-2.5 bg-gray-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out"
             >
-              Login
+              Sing in
             </button>
             <button
               onClick={() => navigation("/registation")}
               type="button"
               className="inline-block px-6 mx-1 lg:mx-2 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
             >
-              Registation
+              Sign up
             </button>
           </div>
         )}
