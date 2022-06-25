@@ -43,7 +43,9 @@ const Payment = () => {
               <p className="text-gray-700 text-base">Price:{data?.price} $</p>
               <p className="text-gray-700 text-base">Phone:{data?.phone}</p>
               <p className="text-gray-700 text-base">Email: {data?.email}</p>
-              <p className="text-gray-700 text-base">Address: {data?.address}</p>
+              <p className="text-gray-700 text-base">
+                Address: {data?.address}
+              </p>
             </div>
           </div>
         </div>
