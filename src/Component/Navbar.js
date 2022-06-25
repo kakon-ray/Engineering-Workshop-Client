@@ -319,7 +319,9 @@ const Navbar = () => {
                 <Link to="dashboard">
                   <Li>Profile</Li>
                 </Link>
-                <Li>My Order</Li>
+                <Link to="dashboard/myorder">
+                  <Li>My Order</Li>
+                </Link>
 
                 <li
                   onClick={() => {
