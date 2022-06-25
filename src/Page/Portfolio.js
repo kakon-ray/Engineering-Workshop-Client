@@ -14,7 +14,7 @@ const Portfolio = () => {
           <div className="flex flex-wrap items-center">
             <div className="block w-full lg:flex grow-0 shrink-0 basis-auto lg:w-6/12 xl:w-4/12">
               <img
-                src="https://z-p3-scontent.fdac12-1.fna.fbcdn.net/v/t1.6435-9/124489889_369962447570149_4781988956737706303_n.jpg?stp=dst-jpg_s600x600&_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rqgUbiQIXHMAX8RtpOG&tn=5xY3u7MNz5WSBxqF&_nc_ht=z-p3-scontent.fdac12-1.fna&oh=00_AT8aKcSG6t71zCqnBzYuGD8eIP9Xdd79RmtKJn3LX7EObw&oe=62B4C2D9"
+                src="https://i.ibb.co/7Vy5Mb4/124489889-369962447570149-4781988956737706303-n-1.jpg"
                 alt="Trendy Pants and Shoes"
                 className="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
               />
