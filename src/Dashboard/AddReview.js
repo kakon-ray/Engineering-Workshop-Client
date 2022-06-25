@@ -143,7 +143,7 @@ const AddReview = () => {
                           duration-150
                           ease-in-out"
         >
-          Purches
+          Add Review
         </button>
       </form>
     </div>
