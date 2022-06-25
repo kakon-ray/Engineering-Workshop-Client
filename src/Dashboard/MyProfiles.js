@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import auth from "../firebase.init";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
-import Profile from "./Profile";
+import Profile from "../Dashboard/profile";
 import { useQuery } from "react-query";
 import Loading from "../Component/Loading";
 

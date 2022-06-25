@@ -5,7 +5,6 @@ import { Outlet } from "react-router-dom";
 import auth from "../firebase.init";
 import DashboardSidebar from "./DashboardSidebar";
 import MainSidebar from "./MainSidebar";
-import Profile from "./Profile";
 import Sidebar from "./Sidebar";
 
 const Dashboard = () => {
@@ -20,7 +19,7 @@ const Dashboard = () => {
           <Outlet />
         </div>
       </div>
-       {currentUser && (
+      {currentUser && (
         <div className="sidebutton">
           <button
             type="button"
